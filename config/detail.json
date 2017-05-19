@@ -1,0 +1,64 @@
+{
+  "detail": {
+    "id": 1,
+    "list": 1,
+    "itemList": 3,
+    "name": "全棉针织纯色四件套",
+    "tagList": [
+      {
+        "href": "",
+        "name": "MUJI制造商"
+      }
+    ],
+    "desc": "日系纯色，面料轻柔舒透",
+    "commitNum": "999+",
+    "retailPrice": "299.00",
+    "saleList": [
+      {
+        "href": "",
+        "desc": "至爱臻品折上折，全场低至0元"
+      },
+      {
+        "href": "",
+        "desc": "520买满就送活动"
+      }
+    ],
+    "server": [
+      {
+        "desc": "30天无忧退货"
+      },
+      {
+        "desc": "48小时快速退款"
+      },
+      {
+        "desc": "满88元免邮费"
+      },
+      {
+        "desc": "网易自营品牌"
+      }
+    ],
+    "choseColor": [
+      {
+        "img": "",
+        "title": "烟草绿（床单款）"
+      }
+    ],
+    "sthumbs": [
+      {
+        "img": "/public/img/detail/detail_col_01.jpg"
+      },
+      {
+        "img": "/public/img/detail/detail_col_02.jpg"
+      },
+      {
+        "img": "/public/img/detail/detail_col_03.jpg"
+      },
+      {
+        "img": "/public/img/detail/detail_col_04.jpg"
+      },
+      {
+        "img": "/public/img/detail/detail_col_05.jpg"
+      }
+    ]
+  }
+}

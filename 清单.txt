@@ -1,0 +1,26 @@
+首页————————————————————————
+img/
+phone-top.png 顶部下载app图片
+header-secaaba.png 正常显示logo
+cart.png logo一行购物车
+icon-normal.png 轮播箭头 购物车右上角
+
+img/index_spzzs 商品制作商文件夹
+img/index_allsay 他们都在说
+img/index_jj 居家
+img/index_rqtj 人气推荐
+img/index_xpsf 新品首发 
+img/index_zxj 甄选家
+
+列表页----------------------------------------------
+img/list/banner 列表页banner
+img/list/xl 夏凉
+img/list/bz 被枕
+img/list/cpjt 床品件套
+img/list/byrz 布艺软装
+img/list/jj  家具
+img/list/dj  灯具 
+img/list/js 家饰 
+img/list/cw 宠物
+
+沙湖公园 地铁4 东亭d出口 7：00		
