@@ -23,4 +23,33 @@ img/list/dj  灯具
 img/list/js 家饰 
 img/list/cw 宠物
 
-沙湖公园 地铁4 东亭d出口 7：00		
+静态资源：能够直接打开.html页面，并能够请求到.json数据，登录注册可以通过nodejs和mysql交互
+or 
+ejs 服务端渲染：mysql数据表构思创建，get/post 路由请求服务的数据格式设置，页面效果实现	
+
+选择静态资源：使用方式
+
+首页 
+1 jquery ajax加载时请求到数据 index.json
+2 通过vue 渲染显示数据 jquery逻辑交互
+
+列表页
+http://you.163.com/xhr/item/listByCategory.json?__timestamp=1495271168709&sortType=1&descSorted=true&subCategoryId=1036000&categoryId=1036000".
+__timestamp=1495271168709 时间戳 (new Date()).getTime()
+
+
+1 jquery ajax加载时请求到数据 list.json
+2 通过vue 渲染显示数据 jquery逻辑交互
+3 全部 默认 请求list.json
+4 全部 价格降序 请求 list_priceDesc.json  descSorted=true
+5 全部 价格升序 请求 list_priceAsc.json   descSorted=false
+6 全部 上架时间 请求                      sortType=2选中 1不选中
+7 默认 夏凉   请求 list_xl.json
+8 默认 被枕   请求 list_bz.json
+9 默认 床品件套 请求 list_cpjt.json
+10 默认 布艺软装 请求 list_byrz.json
+11 默认 家具 请求 list_jj.json
+12 默认 灯具 请求 list_dj.json
+13 默认 家饰 请求 list_js.json
+14 默认 宠物 请求 list_cw.json
+

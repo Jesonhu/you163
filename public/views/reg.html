@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <label for="userName">用户名</label>
+        <input type="text" name="userName">
+
+        <button class="submit">注册</button>
+    </div>
+
+    <script>
+        $(function() {
+          $('.submit').click(function() {
+              $.ajax({
+                url: '/reg',
+                type: 'POST',
+                data: {
+                  userName: '123'
+                },
+                success(data) {
+                  console.log(data);
+                }
+              })
+          });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网易严选</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.3.3/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.16.1/axios.min.js"></script>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header-hook">
+        <!-- 顶部导航 -->
+        <div class="site-nav">
+            <div class="container clearfix">
+                <div class="nav-left">
+                    好的生活，没那么贵
+                </div>
+                <div class="nav-right">
+                    <a href="" class="login">登录</a>
+                    <a href="" class="reg">注册</a>
+                    <a href="" class="left-split">严选态度</a>
+                    <a href="" class="left-split">企业采购</a>
+                    <div class="left-split has-em service-hook">
+                        客户服务
+                        <em class="bg-arrow arrow"></em>
+                        <div class="xs-dropdown z100">
+                            <nav class="dropdownmenu">
+                                <a href="" class="item">帮助中心</a>
+                                <a href="" class="item">在线客服</a>
+                                <a href="" class="item">电话客服</a>
+                                <a href="" class="item">商务合作</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="left-split download has-em phone-hook">
+                        <em class="bg-phone phone"></em>
+                        下载APP
+                        <div class="xs-dropdown z100">
+                            <div class="dropdownmenu">
+                            <img src="/img/appdown.png" class="img" alt="" width="117" height="117">
+                            <p class="desc">下载领1000元新人礼包</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- logo tab区域 -->
+        <div class="hd-tabwrap hd-tabwrap-hook">
+            <div class="container">
+                <div class="clearfix logowrap">
+                <a href="" class="hd-logo"></a>
+                <div class="right-main">
+                    <div class="search-con clearfix">
+                        <div class="search-input-wrap z50">
+                            <input type="text" class="search-input hd-input-hook" maxlength="100" autocomplete="off" placeholder="
+Crocs制造商新款拖鞋券后9块9">
+                            <div class="search-hotkey">
+                                <ul class="hotkey-list">
+                                    <li class="hotkey-item hotkey-hook" v-for="item in searchHotKeyList">{{item.text}}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="search-bar">
+                            <em class="bar"></em>
+                        </div>
+
+                        <div class="shop-cart-wrap">
+                            <a href="" class="link">
+                                <em class="bg-shop-cart shop-cart"></em>
+                                <em class="bg-badge badge">0</em>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <a href="" class="bg-logo hd-fiexd-logo"></a>
+
+                <!-- nav -->
+                <div class="hd-tab-nav hd-tab-hook">
+                    <ul class="nav-list clearfix">
+                        <li class="topLevel-nav-item item-hook" v-for="item in tabNav">
+                            <a :href="item.textLink" class="topLevel">{{item.text}}</a>
+                            <div class="nav-dropdown z10" v-if="item.childNavList">
+                                <div class="full-screen full-screen-hook">
+                                    <ul class="son-nav-list clearfix">
+                                        <li class="son-nav-item" v-for="sonNav in item.childNavList">
+                                            <a :href="sonNav.Link" class="son-nav-link">
+                                                <img :src="sonNav.picUrl" alt="">
+                                                <p class="text">{{sonNav.text}}</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="fixed-right">
+                        <ul class="nav-fixed-r-list clearfix">
+                            <li class="nav-fixed-r-item"><a href=""  class="link">登录</a></li>
+                            <li class="nav-fixed-r-item"><a href="" class="link">注册</a></li>
+                            <li class="nav-fixed-r-item">
+                                <div class="shop-cart-wrap">
+                                    <a href="" class="link">
+                                        <em class="bg-shop-cart shop-cart"></em>
+                                        <em class="bg-badge badge">0</em>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <!-- banner -->
+    <div id="bd-hook" class="bd">
+        <div class="bd-banner-wrap">
+            <div class="banner-main">
+                <ul class="banner-list">
+                    <li class="banner-item z5" v-for="item in bannerList">
+                        <a :href="item.link" class="link">
+                            <img :src="item.picUrl" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="arrow-main">
+                <button class="bg-badge arrow arrow-prev z100"></button>
+                <button class="bg-badge arrow arrow-next z100"></button>
+            </div>
+            <div class="bottom-nav">
+                <ul class="bottom-nav-list clearfix">
+                    <li class="bottom-nav-item" v-for="item in bannerList.length">
+                        <span class="guide"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer style="height:1500px;">底部</footer>
+
+    <script src="../js/getData.js"></script>
+    <script src="../js/show.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container{
+    width:1090px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color:#ccc;
+}
+
+/* 层级 */
+.z5{
+    z-index: 5;
+}
+.z10{
+    z-index: 10;
+}
+.z50{
+    z-index: 50;
+}
+.z100{
+    z-index: 100;
+}
+/* em背景图片 */
+.bg-logo{
+    background: url('../img/header-secaaba.png') no-repeat;
+}
+.bg-arrow{
+    background-image: url(../img/arrow.png);
+    background-repeat: no-repeat;
+}
+.bg-phone{
+    background: url(../img/phone-top.png) no-repeat;
+}
+.bg-shop-cart{
+    background: url(../img/cart.png) no-repeat;
+}
+.bg-badge{
+    background: url(../img/icon-normal.png) no-repeat;
+}
+/* 下拉框 */
+.xs-dropdown{
+    display: none;
+    position:absolute;
+    background:#fff;
+    border:1px solid #ddd;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+}
+.xs-dropdown .dropdownmenu{
+    position:relative;
+    padding: 0 5px;
+}
+.xs-dropdown .dropdownmenu:before{
+    content:'';
+    position:absolute;
+    display:block;
+    top:-6px;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    width:10px;
+    height:6px;
+    background: url(../img/arrow.png) no-repeat;
+    background-position:0 -458px;
+}
+.xs-dropdown .item{
+    display:block;
+    text-align: center;
+    border-bottom:1px solid rgba(0,0,0,.1);
+}
+.xs-dropdown .item:last-child{
+    border-bottom:0;
+}

@@ -3,7 +3,7 @@ const express = require('express'),
       mysql = require('../config/mysql');
 
 /**
- * 首页
+ * webapp数据 首页
  */
 
 /* 轮播大图 */
@@ -83,7 +83,7 @@ router.get('/api/goods_recomment/:count', (req, res) => {
 });
 
 /**
- * 商品详情页面
+ * webapp数据 商品详情页面
  */
 router.get('/api/goods_detail/:id', (req, res) => {
     const id = req.params.id;
@@ -97,6 +97,10 @@ router.get('/api/goods_detail/:id', (req, res) => {
     });
 });
 
+/**
+ * pc 路由
+ */
+router.use('/reg', require('./reg'));
 
 
 module.exports = router;
