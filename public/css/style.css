@@ -902,3 +902,26 @@
 .floor-zxj .floor-zxj-item:last-child{
     margin-top: 10px;
 }
+
+/* 大家都在说 */
+.floor-newcomment{
+    height:660px;
+    margin-top:80px;
+    background-color:#f4f0ea;
+    overflow: hidden;
+}
+.floor-newcomment .floor-newcomment-bd{
+    overflow: hidden;
+}
+.floor-newcomment .floor-title{
+    padding-top:60px;
+}
+.floor-newcomment .floor-newcomment-item{
+    float:left;
+    width:356px;
+    margin:0 10px 50px 0;
+    overflow: hidden;
+}
+.floor-newcomment .floor-newcomment-item:nth-child(3n+0){
+    margin-right:0;
+}

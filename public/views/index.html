@@ -322,6 +322,42 @@ Crocs制造商新款拖鞋券后9块9">
                 </div>
             </div>
         </div>
+        
+        <!-- 大家都在说 -->
+        <div class="floor floor-newcomment">
+            <div class="container">
+                <div class="floor-title clearfix">
+                    <div class="floor-title-name">{{djdzs.hdTitle}}</div>
+                    <div class="floor-title-desc">{{djdzs.titleDesc}}</div>
+                </div>
+                <div class="floor-newcomment-bd floor-swiper-bd">
+                    <ul class="floor-newcomment-list clearfix">
+                        <li class="floor-newcomment-item"
+                            v-for="item in djdzs.conList"
+                        >
+                            <div class="img-wrap">
+                                <a :href="item.link">
+                                    <img :src="item.imgUrl" class="imgScale" alt=""></a>
+                            </div>
+                            <div class="recomment-text">
+                                <p class="user">{{item.user}}</p>
+                                <div class="auther">
+                                    <h2>{{item.name}}</h2>
+                                    <span class="price">{{item.price | rmb}}</span>
+                                </div>
+                                <div class="desc">
+                                    {{item.desc}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="floor-arrow-wrap">
+                        <span class="bg-badge floor-arrow prev"></span>
+                        <span class="bg-badge floor-arrow next"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 

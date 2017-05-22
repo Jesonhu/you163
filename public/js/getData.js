@@ -33,7 +33,8 @@ var content = new Vue({
     xpsf: null, // 新品首发
     rqtj: null, // 人气推荐
     jj: null, // 居家
-    zxj: null // 甄选家
+    zxj: null, // 甄选家
+    djdzs: null // 大家都在说
   },
   filters: {
       rmb(val) {
@@ -55,6 +56,7 @@ var content = new Vue({
           this.rqtj = res.data.result.rqtj;
           this.jj = res.data.result.jj;
           this.zxj = res.data.result.zxj;
+          this.djdzs = res.data.result.djdzs;
         }
       })
         .catch((err) => {
