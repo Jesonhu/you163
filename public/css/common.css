@@ -11,7 +11,12 @@ a{
     text-decoration: none;
     color:#ccc;
 }
-
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
 /* 层级 */
 .z5{
     z-index: 5;
@@ -24,6 +29,12 @@ a{
 }
 .z100{
     z-index: 100;
+}
+.imgScale{
+    transition:.4s all linear;
+}
+.imgScale:hover{
+    transform: scale(1.05);
 }
 /* em背景图片 */
 .bg-logo{

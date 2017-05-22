@@ -230,20 +230,25 @@
           "link": "",
           "picUrlList": [
             {
-              "picMainUrl": "/img/index_xpsf/01.jpg",
-              "picHoverUrl": "/img/index_xpsf/01.jpg"
+              "picUrl": "/img/index_xpsf/01.png"
+            },
+            {
+              "picUrl": "/img/index_xpsf/01_01.jpg"
             }
           ],
           "title": "男式飞织运动休闲鞋",
           "price": "199",
-          "desc": "CK制造商"
+          "desc": "CK制造商",
+          "color": "2色可选"
         },
         {
           "link": "",
           "picUrlList": [
             {
-              "picMainUrl": "/img/index_xpsf/01.jpg",
-              "picHoverUrl": "/img/index_xpsf/01.jpg"
+              "picUrl": "/img/index_xpsf/01.png"
+            },
+            {
+              "picUrl": "/img/index_xpsf/01_01.jpg"
             }
           ],
           "title": "22男式飞织运动休闲鞋",
@@ -255,8 +260,10 @@
           "link": "",
           "picUrlList": [
             {
-              "picMainUrl": "/img/index_xpsf/01.jpg",
-              "picHoverUrl": "/img/index_xpsf/01.jpg"
+              "picUrl": "/img/index_xpsf/01.png"
+            },
+            {
+              "picUrl": "/img/index_xpsf/01_01.jpg"
             }
           ],
           "title": "33男式飞织运动休闲鞋",
@@ -268,8 +275,10 @@
           "link": "",
           "picUrlList": [
             {
-              "picMainUrl": "/img/index_xpsf/01.jpg",
-              "picHoverUrl": "/img/index_xpsf/01.jpg"
+              "picUrl": "/img/index_xpsf/01.png"
+            },
+            {
+              "picUrl": "/img/index_xpsf/01_01.jpg"
             }
           ],
           "title": "44男式飞织运动休闲鞋",
@@ -280,8 +289,10 @@
           "link": "",
           "picUrlList": [
             {
-              "picMainUrl": "/img/index_xpsf/01.jpg",
-              "picHoverUrl": "/img/index_xpsf/01.jpg"
+              "picUrl": "/img/index_xpsf/01.png"
+            },
+            {
+              "picUrl": "/img/index_xpsf/01_01.jpg"
             }
           ],
           "title": "55男式飞织运动休闲鞋",
@@ -292,8 +303,10 @@
           "link": "",
           "picUrlList": [
             {
-              "picMainUrl": "/img/index_xpsf/01.jpg",
-              "picHoverUrl": "/img/index_xpsf/01.jpg"
+              "picUrl": "/img/index_xpsf/01.png"
+            },
+            {
+              "picUrl": "/img/index_xpsf/01_01.jpg"
             }
           ],
           "title": "66男式飞织运动休闲鞋",
@@ -305,8 +318,10 @@
           "link": "",
           "picUrlList": [
             {
-              "picMainUrl": "/img/index_xpsf/01.jpg",
-              "picHoverUrl": "/img/index_xpsf/01.jpg"
+              "picUrl": "/img/index_xpsf/01.png"
+            },
+            {
+              "picUrl": "/img/index_xpsf/01_01.jpg"
             }
           ],
           "title": "77男式飞织运动休闲鞋",
@@ -318,8 +333,10 @@
           "link": "",
           "picUrlList": [
             {
-              "picMainUrl": "/img/index_xpsf/01.jpg",
-              "picHoverUrl": "/img/index_xpsf/01.jpg"
+              "picUrl": "/img/index_xpsf/01.png"
+            },
+            {
+              "picUrl": "/img/index_xpsf/01_01.jpg"
             }
           ],
           "title": "88男式飞织运动休闲鞋",
@@ -329,6 +346,7 @@
       ]
     },
     "rqtj": {
+      "hdTitle": "人气推荐",
       "hdNav": [
         {
           "text" : "编辑推荐"
@@ -420,7 +438,7 @@
           ]
         },
         {
-          "rqzb": [
+          "rqtj": [
             {
               "link": "",
               "picUrl": "/img/index_rqtj/01.png",
@@ -498,7 +516,7 @@
           ]
         },
         {
-          "rxzb": [
+          "rqtj": [
             {
               "link": "",
               "picUrl": "/img/index_rqtj/01.png",
@@ -624,8 +642,7 @@
           "link": "",
           "picUrl": "/img/index_jj/03.png",
           "title": "日式蓬软太鼓抱枕",
-          "price": "169",
-          "colorTag": "3色可选"
+          "price": "169"
         },
         {
           "link": "",
@@ -649,15 +666,15 @@
       "conList": [
         {
           "link": "",
-          "picUrL": "img/index_zxj/01.jpg"
+          "picUrl": "/img/index_zxj/01.jpg"
         },
         {
           "link": "",
-          "picUrL": "img/index_zxj/02.jpg"
+          "picUrl": "/img/index_zxj/02.jpg"
         },
         {
           "link": "",
-          "picUrL": "img/index_zxj/03.jpg"
+          "picUrl": "/img/index_zxj/03.jpg"
         }
       ]
     },

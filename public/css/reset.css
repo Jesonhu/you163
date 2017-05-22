@@ -1,4 +1,4 @@
-*
+/*
 HTML5 Reset :: style.css
 ----------------------------------------------------------
 We have learned much from/been inspired by/taken code where offered from:
@@ -50,7 +50,12 @@ body{
 /* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
 img,
 object,
-embed {max-width: 100%;}
+embed {
+    display:block;
+    max-width: 100%;
+    height:100%;
+    margin:0 auto;
+}
 
 /*
    Note: keeping IMG here will cause problems if you're using foreground images as sprites.

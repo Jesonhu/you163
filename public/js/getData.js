@@ -28,7 +28,17 @@ var header = new Vue({
 var content = new Vue({
   el: '#bd-hook',
   data: {
-    bannerList: []
+    bannerList: [], // banner
+    ppzzs: null,  // 品牌制造商
+    xpsf: null, // 新品首发
+    rqtj: null, // 人气推荐
+    jj: null, // 居家
+    zxj: null // 甄选家
+  },
+  filters: {
+      rmb(val) {
+          return "￥" + val;
+      }
   },
   mounted() {
     this.$nextTick(() => {
@@ -40,6 +50,11 @@ var content = new Vue({
       axios.get('../api/index.json').then((res) => {
         if (res.status === 200) {
           this.bannerList = res.data.result.bannerList;
+          this.ppzzs = res.data.result.ppzzs;
+          this.xpsf = res.data.result.xpsf;
+          this.rqtj = res.data.result.rqtj;
+          this.jj = res.data.result.jj;
+          this.zxj = res.data.result.zxj;
         }
       })
         .catch((err) => {

@@ -406,11 +406,13 @@
     background-color:rgb(180,160,120);
 }
 .bd-banner-wrap .arrow-prev{
-    left:300px;
+    left:50%;
+    margin-left:-800px;
     background-position: 0 -5285px;
 }
 .bd-banner-wrap .arrow-next{
-    right:300px;
+    right:50%;
+    margin-right:-800px;
     background-position: 0 -5415px;
 }
 
@@ -445,12 +447,458 @@
     background: #fff;
 }
 .bd-banner-wrap .bottom-nav-item.is-active .guide{
-    -moz-box-shadow: 0 0 0 4px #dfcead;
-    -webkit-box-shadow: 0 0 0 4px #dfcead;
-    box-shadow: 0 0 0 4px #dfcead;
+    -moz-box-shadow: 0 0 0 2px #dfcead;
+    -webkit-box-shadow: 0 0 0 2px #dfcead;
+    box-shadow: 0 0 0 2px #dfcead;
     background: rgb(180,160,120);
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
 
+/*  楼层公共样式  */
+.floor{
+    margin-top:26px;
+}
+/* 公共样式风格1 人气推荐item布局 */
+.floorhasflag .item{
+    float:left;
+    text-align: center;
+    overflow: hidden;
+}
+.floorhasflag .item .color{
+    position:absolute;
+    top:20px;
+    left:10px;
+    height:20px;
+    padding: 0 5px;
+    font-size: 12px;
+    color:rgb(180,160,120);
+    background-color:rgba(180,160,120,.2);
+    border:1px solid rgb(180,160,120);
+    border-radius:5px;
+}
+.floorhasflag .item .link{
+    display:block;
+    width:100%;
+    height:100%;
+    position:relative;
+}
+.floorhasflag .item .flag-wrap{
+
+}
+.floorhasflag .item .flag{
+    display:inline-block;
+    height:20px;
+    margin-right: 5px;
+    padding: 0 5px;
+    line-height: 20px;
+    text-align: center;
+    color:#fff;
+    background-color:#f28f2d;
+}
+.floorhasflag .item .flag:nth-child(2){
+    background-color:red;
+}
+.floorhasflag .item .name{
+    height:20px;
+    line-height: 20px;
+    color:#333;
+    font-weight: 700;
+}
+.floorhasflag .item .price{
+    color: red;
+    font-size: 13px;
+}
+.floorhasflag .item .img{
+    transition:1s all linear;
+}
+.floorhasflag .item:hover .img{
+    transform: scale(1.05);
+}
+
+/* 多项tabNav公共样式 */
+.floor-moretab .floor-title-desc{
+    position:relative;
+}
+.floor-moretab .floor-title-desc:before{
+    content: '';
+    position:absolute;
+    top:10px;
+    left:-9px;
+    width:1px;
+    height:65%;
+    background:#000;
+}
+.floor-moretab .floor-title .more-tabnav{
+    float:left;
+}
+.floor-moretab .floor-title .more-tabnav{
+    position:relative;
+    padding:0 13px;
+    margin-top: 10px;
+}
+.floor-moretab .floor-title .more-tabnav:before{
+    content: '';
+    position:absolute;
+    top:0;
+    right:0;
+    width:2px;
+    height:100%;
+    background:#333;
+    border-radius:3px;
+    transform: rotate(30deg);
+}
+.floor-moretab .more-tabnav .link{
+    font-size: 14px;
+    color:#333;
+}
+.floor-moretab .more-tabnav .link:hover{
+    color:rgb(180,160,120);
+}
+.floor-moretab .floor-moreTab-list{
+    margin-top:20px;
+}
+.floor-moretab .floor-moreTab-item{
+    float:left;
+    margin:0 10px 50px 0;
+}
+.floor-moretab .floor-moreTab-item:last-child{
+    margin-right: 0;
+}
+.floor-moretab .floor-moreTab-item .link{
+    display: block;
+    color:#000;
+    font-weight: 700;
+    text-align: center
+}
+.floor-moretab .floor-moreTab-item .img-wrap{
+    width:265px;
+    height:265px;
+    background:rgba(180,160,120,.2);
+}
+.floor-moretab .floor-moreTab-item .img-wrap{
+    position:relative;
+}
+.floor-moretab .floor-moreTab-item .flag{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    height: 20px;
+    padding: 0 5px;
+    font-size: 12px;
+    color: rgb(180,160,120);
+    background-color: rgba(180,160,120,.1);
+    border: 1px solid rgb(180,160,120);
+    border-radius: 5px;
+}
+.floor-moretab .floor-moreTab-item .name{
+    margin-top: 37px;
+    height: 20px;
+    line-height: 20px;
+    color: #333;
+    font-weight: 700;
+}
+.floor-moretab .floor-moreTab-item .name:hover{
+    color:rgb(180,160,120);
+}
+.floor-moretab .floor-moreTab-item .price{
+    color: red;
+    font-size: 13px;
+}
+/* 品牌制作商 */
+.floor-manufacture {
+    margin-top:26px;
+    width:100%;
+}
+
+.floor-title{
+    margin-bottom:20px;
+    line-height: 1;
+    color:#333;
+    font-size:14px;
+}
+.floor-title .floor-title-name{
+    float:left;
+    font-size: 28px;
+    font-weight: 700;
+}
+.floor-title .floor-title-desc{
+    float:left;
+    margin-left:20px;
+    padding-top:13px;
+}
+.floor-title .floor-title-more{
+    float:right;
+    padding-top:13px;
+    padding-left:30px;
+}
+.floor-title-more .more-link{
+    color:#333;
+}
+.floor-title-more .more-link:hover{
+    color:rgb(180,160,120);
+}
+.floor-manufacture-bd{
+    height:320px;
+    width:100%;
+    overflow: hidden;
+}
+.manufacture-item{
+    float:left;
+    position:relative;
+    margin-left:9px;
+    width:357px;
+    height:320px;
+    overflow:hidden;
+    text-align: center;
+}
+.manufacture-item .link{
+    color:#666;
+}
+.manufacture-item .name{
+    position: relative;
+    margin:48px 0 19px;
+    line-height: 1;
+    font-size:24px;
+    text-align: center;
+}
+.manufacture-item .flag{
+    position: absolute;
+    top:-3px;
+    left:112px;
+    display:block;
+    width:32px;
+    height:21px;
+    line-height: 19px;
+    color:#fff;
+    text-align: center;
+    font-size: 11px;
+    background:url(../img/name-flag.png) no-repeat;
+
+}
+.manufacture-item .price{
+    position:relative;
+    display:inline-block;
+    padding-top:17px;
+    margin:0 auto;
+    border-top:1px solid #666;
+    font-size: 14px;
+}
+.manufacture-item .img{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    display: block;
+    width:100%;
+    height:100%;
+    transition: 1s all;
+}
+.manufacture-item .img:hover{
+    transform:scale(1.05);
+}
+.manufacture-item:nth-child(1){
+    margin-left:0;
+}
+.manufacture-item:nth-child(3),
+.manufacture-item:nth-child(4){
+    margin-top:9px;
+    height:155px;
+    text-align: left;
+}
+.manufacture-item:nth-child(3) .name,
+.manufacture-item:nth-child(4) .name{
+    margin:32px 0 10px 20px;
+    font-size: 20px;
+    text-align: left;
+}
+.manufacture-item:nth-child(3) .price,
+.manufacture-item:nth-child(4) .price{
+    margin-left: 20px;
+    padding-top: 10px;
+}
+.manufacture-item:nth-child(3){
+    margin-top:0;
+} 
+
+/*新品首发*/
+.floor-swiper-bd{
+    position: relative;
+}
+.floor-swiper-bd .floor-main{
+    width:1090px;
+    overflow: hidden;
+}
+.floor-swiper-bd .floor-main .floor-swiper-list{
+    width:200%;
+}
+.floor-swiper-bd .floor-main .floor-swiper-item{
+    float:left;
+    height:348px;
+    width:265px;
+    margin:0 10px 50px 0;
+    text-align: center
+}
+.floor-swiper-bd .floor-main .floor-swiper-item:hover{
+    -moz-box-shadow: 1px 1px 8px rgba(0,0,0,.2);
+    -webkit-box-shadow: 1px 1px 8px rgba(0,0,0,.2);
+    box-shadow: 1px 1px 8px rgba(0,0,0,.2);
+    background-color: rgba(180,160,120,.2);
+}
+.floor-swiper-bd .floor-swiper-item:hover .img{
+    display:none;
+}
+.floor-swiper-bd .floor-swiper-item:hover .img:last-child{
+    display:block;
+}
+.floor-swiper-bd .floor-main .floor-swiper-item:nth-child(4n+0){
+    margin-right:0;
+}
+.floor-swiper-bd .floor-swiper-item .img:last-child{
+    display:none;
+}
+.floor-swiper-bd .floor-swiper-item .pic-wrap{
+    position:relative;
+}
+.floor-swiper-bd .floor-swiper-item .color{
+    position:absolute;
+    top:20px;
+    left:10px;
+    height:20px;
+    padding: 0 5px;
+    font-size: 12px;
+    color:rgb(180,160,120);
+    background-color:rgba(180,160,120,.2);
+    border:1px solid rgb(180,160,120);
+    border-radius:5px;
+}
+.floor-swiper-bd .floor-swiper-item .link{
+    display:block;
+    width:100%;
+    height:100%;
+    position:relative;
+}
+.floor-swiper-bd .floor-swiper-item .flag{
+    position:absolute;
+    bottom:47px;
+    left:50%;
+    margin-left: -45px;
+    display:block;
+    height:20px;
+    width:90px;
+    line-height: 20px;
+    text-align: center;
+    color:#fff;
+    background-color:#f28f2d;
+}
+.floor-swiper-bd .floor-swiper-item .name{
+    margin-top:37px;
+    height:20px;
+    line-height: 20px;
+    color:#333;
+    font-weight: 700;
+}
+.floor-swiper-bd .floor-swiper-item .price{
+    color:red;
+    font-size: 13px;
+}
+.floor-swiper-bd .floor-swiper-item .desc{
+    margin-left:8px;
+    padding-left:10px;
+    font-size: 12px;
+    color:#999;
+    border-left:1px solid #999;
+}
+.floor-swiper-bd .floor-arrow{
+    position:absolute;
+    top:28%;
+    display:block;
+    width:50px;
+    height:50px;
+    background-color:rgba(180,160,120,.2);
+    border-radius:50%;
+    cursor: pointer;
+}
+.floor-swiper-bd .floor-arrow.prev{
+    left:-60px;
+    background-position: 0 -5285px;
+}
+.floor-swiper-bd .floor-arrow.next{
+    right:-60px;
+    background-position:0 -5415px;
+}
+
+/*  人气推荐 */
+.floor-recomment{
+    height:596px;
+    margin-top: 0;
+    padding-top:60px;
+    background-color:rgba(180,160,120,.15);
+    overflow: hidden;
+}
+.floor-recomment .floor-title{
+    margin:0 0 20px;
+}
+.floor .floor-title-tabnav{
+    float:left;
+    margin-top: 3px;
+    color:#333;
+    text-align: center;
+    font-size: 14px;
+}
+.floor .floor-title-tabnav .tabnav{
+    display:inline-block;
+    width:70px;
+    height:28px;
+    margin-right:55px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.floor .floor-title-tabnav .tabnav:hover{
+    color:rgb(180,160,120);
+}
+.floor .floor-title-tabnav .tabnav:first-child{
+    margin-left:35px;
+}
+.floor .floor-title-tabnav .tabnav.is-active{
+    border-bottom:2px solid rgb(180,160,120);
+    color:rgb(180,160,120);
+}
+.floor-recomment .floor-tabcon-list{
+    display:none;
+}
+.floor-recomment .floor-tabcon-list:first-child{
+    display:block;
+}
+.floor-recomment .floor-tabcon-item:first-child{
+    width:390px;
+    height:470px;
+    margin-left: 0;
+}
+.floor-recomment .floor-tabcon-item{
+    position: relative;
+    width:223px;
+    height:230px;
+    margin-left: 10px;
+    background-color:#fff;
+}
+.floor-recomment .marginTop{
+    margin-top: 10px;
+} 
+
+/* 甄选家 */
+.floor-zxj .floor-zxj-item{
+    float:left;
+    width:390px;
+    height:185px;
+    margin-left: 10px;
+}
+.floor-zxj .floor-zxj-item:first-child{
+    margin-left: 0;
+    width:690px;
+    height:380px;
+}
+.floor-zxj .floor-zxj-item:last-child{
+    margin-top: 10px;
+}

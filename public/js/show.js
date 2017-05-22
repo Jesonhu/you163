@@ -63,3 +63,11 @@ $(function() {
     }
   })
 });
+
+$(window).ready(function(){
+      floorRecommed()
+      function floorRecommed() {
+         $('.recomment-list-hook').find('.recomment-item-hook:gt(3)')
+             .addClass('marginTop');
+      }
+});
