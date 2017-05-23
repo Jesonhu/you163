@@ -1,9 +1,8 @@
-var header = new Vue({
+new Vue({
   el: ".header-hook",
   data: {
-    title: 'hello vue',
     searchHotKeyList: [],
-    tabNav: [],
+    tabNav: []
   },
   mounted: function() {
     this.$nextTick(() => {
@@ -12,7 +11,7 @@ var header = new Vue({
   },
   methods: {
     searchView() {
-      axios.get('../api/index.json').then((res) => {
+      axios.get('../api/common.json').then((res) => {
         if (res.status === 200) {
           this.searchHotKeyList = res.data.result.SearchWordsList;
           this.tabNav = res.data.result.navList;
@@ -25,7 +24,31 @@ var header = new Vue({
   }
 });
 
-var content = new Vue({
+new Vue({
+    el: ".footer-hook",
+    data: {
+        footerList: []
+    },
+    mounted: function() {
+        this.$nextTick(() => {
+            this.searchView();
+        });
+    },
+    methods: {
+        searchView() {
+            axios.get('../api/common.json').then((res) => {
+                if (res.status === 200) {
+                    this.footerList = res.data.result.footerList;
+                }
+            })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+    }
+});
+
+new Vue({
   el: '#bd-hook',
   data: {
     bannerList: [], // banner

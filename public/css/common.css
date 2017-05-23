@@ -17,6 +17,9 @@ a{
 .fr{
     float:right;
 }
+.no-border{
+    border:0;
+}
 /* 层级 */
 .z5{
     z-index: 5;
@@ -50,7 +53,8 @@ a{
 .bg-shop-cart{
     background: url(../img/cart.png) no-repeat;
 }
-.bg-badge{
+.bg-badge,
+.bg-normal{
     background: url(../img/icon-normal.png) no-repeat;
 }
 /* 下拉框 */
