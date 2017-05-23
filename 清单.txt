@@ -1,55 +1,54 @@
-Ê×Ò³¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+é¦–é¡µâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 img/
-phone-top.png ¶¥²¿ÏÂÔØappÍ¼Æ¬
-header-secaaba.png Õı³£ÏÔÊ¾logo
-cart.png logoÒ»ĞĞ¹ºÎï³µ
-icon-normal.png ÂÖ²¥¼ıÍ· ¹ºÎï³µÓÒÉÏ½Ç
+phone-top.png é¡¶éƒ¨ä¸‹è½½appå›¾ç‰‡
+header-secaaba.png æ­£å¸¸æ˜¾ç¤ºlogo
+cart.png logoä¸€è¡Œè´­ç‰©è½¦
+icon-normal.png è½®æ’­ç®­å¤´ è´­ç‰©è½¦å³ä¸Šè§’
 
-img/index_spzzs ÉÌÆ·ÖÆ×÷ÉÌÎÄ¼ş¼Ğ
-img/index_allsay ËûÃÇ¶¼ÔÚËµ
-img/index_jj ¾Ó¼Ò
-img/index_rqtj ÈËÆøÍÆ¼ö
-img/index_xpsf ĞÂÆ·Ê×·¢ 
-img/index_zxj ÕçÑ¡¼Ò
+img/index_spzzs å•†å“åˆ¶ä½œå•†æ–‡ä»¶å¤¹
+img/index_allsay ä»–ä»¬éƒ½åœ¨è¯´
+img/index_jj å±…å®¶
+img/index_rqtj äººæ°”æ¨è
+img/index_xpsf æ–°å“é¦–å‘
+img/index_zxj ç”„é€‰å®¶
 
-ÁĞ±íÒ³----------------------------------------------
-img/list/banner ÁĞ±íÒ³banner
-img/list/xl ÏÄÁ¹
-img/list/bz ±»Õí
-img/list/cpjt ´²Æ·¼şÌ×
-img/list/byrz ²¼ÒÕÈí×°
-img/list/jj  ¼Ò¾ß
-img/list/dj  µÆ¾ß 
-img/list/js ¼ÒÊÎ 
-img/list/cw ³èÎï
+åˆ—è¡¨é¡µ----------------------------------------------
+img/list/banner åˆ—è¡¨é¡µbanner
+img/list/xl å¤å‡‰
+img/list/bz è¢«æ•
+img/list/cpjt åºŠå“ä»¶å¥—
+img/list/byrz å¸ƒè‰ºè½¯è£…
+img/list/jj  å®¶å…·
+img/list/dj  ç¯å…·
+img/list/js å®¶é¥°
+img/list/cw å® ç‰©
 
-¾²Ì¬×ÊÔ´£ºÄÜ¹»Ö±½Ó´ò¿ª.htmlÒ³Ãæ£¬²¢ÄÜ¹»ÇëÇóµ½.jsonÊı¾İ£¬µÇÂ¼×¢²á¿ÉÒÔÍ¨¹ınodejsºÍmysql½»»¥
-or 
-ejs ·şÎñ¶ËäÖÈ¾£ºmysqlÊı¾İ±í¹¹Ë¼´´½¨£¬get/post Â·ÓÉÇëÇó·şÎñµÄÊı¾İ¸ñÊ½ÉèÖÃ£¬Ò³ÃæĞ§¹ûÊµÏÖ	
+é™æ€èµ„æºï¼šèƒ½å¤Ÿç›´æ¥æ‰“å¼€.htmlé¡µé¢ï¼Œå¹¶èƒ½å¤Ÿè¯·æ±‚åˆ°.jsonæ•°æ®ï¼Œç™»å½•æ³¨å†Œå¯ä»¥é€šè¿‡nodejså’Œmysqläº¤äº’
+or
+ejs æœåŠ¡ç«¯æ¸²æŸ“ï¼šmysqlæ•°æ®è¡¨æ„æ€åˆ›å»ºï¼Œget/post è·¯ç”±è¯·æ±‚æœåŠ¡çš„æ•°æ®æ ¼å¼è®¾ç½®ï¼Œé¡µé¢æ•ˆæœå®ç°
 
-Ñ¡Ôñ¾²Ì¬×ÊÔ´£ºÊ¹ÓÃ·½Ê½
+é€‰æ‹©é™æ€èµ„æºï¼šä½¿ç”¨æ–¹å¼
 
-Ê×Ò³ 
-1 jquery ajax¼ÓÔØÊ±ÇëÇóµ½Êı¾İ index.json
-2 Í¨¹ıvue äÖÈ¾ÏÔÊ¾Êı¾İ jqueryÂß¼­½»»¥
+é¦–é¡µ
+1 jquery ajaxåŠ è½½æ—¶è¯·æ±‚åˆ°æ•°æ® index.json
+2 é€šè¿‡vue æ¸²æŸ“æ˜¾ç¤ºæ•°æ® jqueryé€»è¾‘äº¤äº’
 
-ÁĞ±íÒ³
+åˆ—è¡¨é¡µ
 http://you.163.com/xhr/item/listByCategory.json?__timestamp=1495271168709&sortType=1&descSorted=true&subCategoryId=1036000&categoryId=1036000".
-__timestamp=1495271168709 Ê±¼ä´Á (new Date()).getTime()
+__timestamp=1495271168709 æ—¶é—´æˆ³ (new Date()).getTime()
 
 
-1 jquery ajax¼ÓÔØÊ±ÇëÇóµ½Êı¾İ list.json
-2 Í¨¹ıvue äÖÈ¾ÏÔÊ¾Êı¾İ jqueryÂß¼­½»»¥
-3 È«²¿ Ä¬ÈÏ ÇëÇólist.json
-4 È«²¿ ¼Û¸ñ½µĞò ÇëÇó list_priceDesc.json  descSorted=true
-5 È«²¿ ¼Û¸ñÉıĞò ÇëÇó list_priceAsc.json   descSorted=false
-6 È«²¿ ÉÏ¼ÜÊ±¼ä ÇëÇó                      sortType=2Ñ¡ÖĞ 1²»Ñ¡ÖĞ
-7 Ä¬ÈÏ ÏÄÁ¹   ÇëÇó list_xl.json
-8 Ä¬ÈÏ ±»Õí   ÇëÇó list_bz.json
-9 Ä¬ÈÏ ´²Æ·¼şÌ× ÇëÇó list_cpjt.json
-10 Ä¬ÈÏ ²¼ÒÕÈí×° ÇëÇó list_byrz.json
-11 Ä¬ÈÏ ¼Ò¾ß ÇëÇó list_jj.json
-12 Ä¬ÈÏ µÆ¾ß ÇëÇó list_dj.json
-13 Ä¬ÈÏ ¼ÒÊÎ ÇëÇó list_js.json
-14 Ä¬ÈÏ ³èÎï ÇëÇó list_cw.json
-
+1 jquery ajaxåŠ è½½æ—¶è¯·æ±‚åˆ°æ•°æ® list.json
+2 é€šè¿‡vue æ¸²æŸ“æ˜¾ç¤ºæ•°æ® jqueryé€»è¾‘äº¤äº’
+3 å…¨éƒ¨ é»˜è®¤ è¯·æ±‚list_xl.json
+4 å…¨éƒ¨ ä»·æ ¼é™åº è¯·æ±‚ list_priceDesc.json  descSorted=true
+5 å…¨éƒ¨ ä»·æ ¼å‡åº è¯·æ±‚ list_priceAsc.json   descSorted=false
+6 å…¨éƒ¨ ä¸Šæ¶æ—¶é—´ è¯·æ±‚ list_timeDown.json   sortType=2é€‰ä¸­ 1ä¸é€‰ä¸­
+7 é»˜è®¤ å¤å‡‰   è¯·æ±‚ list_xl.json
+8 é»˜è®¤ è¢«æ•   è¯·æ±‚ list_bz.json
+9 é»˜è®¤ åºŠå“ä»¶å¥— è¯·æ±‚ list_cpjt.json
+10 é»˜è®¤ å¸ƒè‰ºè½¯è£… è¯·æ±‚ list_byrz.json
+11 é»˜è®¤ å®¶å…· è¯·æ±‚ list_jj.json
+12 é»˜è®¤ ç¯å…· è¯·æ±‚ list_dj.json
+13 é»˜è®¤ å®¶é¥° è¯·æ±‚ list_js.json
+14 é»˜è®¤ å® ç‰© è¯·æ±‚ list_cw.json
