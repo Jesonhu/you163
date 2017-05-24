@@ -81,6 +81,7 @@
   ],
   "goods": [
     {
+      "hasTitle": true,
       "name": "夏凉",
       "picUrl": "/img/list/xl/tit.png",
       "desc": "夏凉床品，舒适一夏",
@@ -176,6 +177,7 @@
       ]
     },
     {
+      "hasTitle": true,
       "name": "被枕",
       "picUrl": "/img/list/bz/tit.png",
       "desc": "守护你的睡眠时光",
@@ -235,6 +237,7 @@
       ]
     },
     {
+      "hasTitle": true,
       "name": "床品件套",
       "picUrl": "/img/list/cpjt/tit.png",
       "desc": "MUJI等品牌制造商出品",
@@ -294,6 +297,7 @@
       ]
     },
     {
+      "hasTitle": true,
       "name": "布艺软装",
       "picUrl": "/img/list/byrz/tit.png",
       "desc": "各种风格软装装点你的家",
@@ -315,6 +319,7 @@
       ]
     },
     {
+      "hasTitle": true,
       "name": "家具",
       "picUrl": "/img/list/jj/tit.png",
       "desc": "大师级工艺",
@@ -336,6 +341,7 @@
       ]
     },
     {
+      "hasTitle": true,
       "name": "灯具",
       "picUrl": "/img/list/dj/tit.png",
       "desc": "一盏灯，温暖一个家",
@@ -357,6 +363,7 @@
       ]
     },
     {
+      "hasTitle": true,
       "name": "家饰",
       "picUrl": "/img/list/js/tit.png",
       "desc": "装饰你的家",
@@ -378,6 +385,7 @@
       ]
     },
     {
+      "hasTitle": true,
       "name": "宠物",
       "picUrl": "/img/list/cw/tit.png",
       "desc": "抑菌除味，打造宠物舒适空间",

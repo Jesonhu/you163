@@ -537,6 +537,7 @@
 
 /* ------------------------列表页---------------------- */
 .l-list-bd{
+    padding-bottom:80px;
     background-color:#f5f5f5;
 }
 
@@ -548,4 +549,173 @@
     width:40px;
     height:60px;
     margin-top:-30px;
+}
+.pl-goodswrap{
+    margin-top:30px;
+    padding: 0 40px;
+    background-color:#fff;
+}
+.pl-goodswrap .pl-sortbar{
+    margin-top: 10px;
+    border-bottom:1px solid rgba(0,0,0,.2);
+}
+.pl-goodswrap .pl-category{
+    padding-top: 20px;
+    line-height: 1;
+    overflow: hidden;
+    border-bottom:1px dashed rgba(180,160,120,1);
+}
+.pl-goodswrap .pl-filter{
+    padding:20px 0 5px 0;
+    line-height: 1;
+}
+.pl-goodswrap .pl-category .pl-name,
+.pl-goodswrap .pl-filter .pl-name{
+    float:left;
+    margin-right:22px;
+    font-size: 14px;
+    color:#999;
+}
+.pl-goodswrap .pl-category .pl-link,
+.pl-goodswrap .pl-filter .pl-link{
+    display:inline-block;
+    margin:0 30px 16px 0;
+    color:#333;
+    font-size: 14px;
+}
+.pl-goodswrap .pl-category .pl-link.is-active,
+.pl-goodswrap .pl-filter .pl-link.is-active,
+.pl-goodswrap .pl-category .pl-link:hover,
+.pl-goodswrap .pl-filter .pl-link:hover{
+    color:rgb(180,160,120);
+}
+.pl-goodswrap .pl-filter .pl-link:nth-child(2),
+.pl-goodswrap .pl-filter .pl-link:nth-child(3){
+    position:relative;
+}
+.pl-goodswrap .pl-filter .pl-link:nth-child(2):before,
+.pl-goodswrap .pl-filter .pl-link:nth-child(2):after,
+.pl-goodswrap .pl-filter .pl-link:nth-child(3):before,
+.pl-goodswrap .pl-filter .pl-link:nth-child(3):after{
+    content:'';
+    position:absolute;
+    right:-20px;
+    display:block;
+    background-image:url(/img/arrow.png);
+    background-repeat: no-repeat;  
+}
+.pl-goodswrap .pl-filter .pl-link:nth-child(2):before,
+.pl-goodswrap .pl-filter .pl-link:nth-child(2):after{
+    content:'';
+    height:5px;
+    width:10px;   
+}
+.pl-goodswrap .pl-filter .pl-link:nth-child(2):before{
+    content:'';
+    top:2px;
+    background-position: 0 -429px;
+}
+.pl-goodswrap .pl-filter .pl-link:nth-child(2):after{
+    content:'';
+    top:9px;
+    background-position: 0 -106px;
+}
+.pl-goodswrap .pl-filter .pl-link:nth-child(3):after{
+    content:'';
+    width:12px;
+    height:12px;
+    top:2px;
+    background-position: 0 -84px;
+}
+.pl-goodswrap .pl-goodsmain .pl-level2category{
+    padding-top:30px;
+}
+.pl-goodswrap .pl-level-hd{
+    text-align: center;
+}
+.pl-goodswrap .pl-goodsmain .pl-hd-title{
+    display:inline-block;
+    font-size: 24px;
+    font-weight:700;
+    line-height: 44px;
+}
+.pl-goodswrap .pl-level-hd .pl-hd-img{
+    display:block;
+    float:left;
+    margin-right:10px;
+}
+.pl-goodswrap .pl-level-hd .pl-hd-desc{
+    margin-top:10px;
+    line-height: 1.5;
+    font-size: 14px;
+    color:#999;
+}
+.pl-goodswrap .pl-level-bd{
+    margin-top: 25px;
+}
+.pl-goodswrap .pl-level-bd .pl-level-item{
+    position: relative;
+    float:left;
+    width:245px;
+    height:360px;
+    margin-right:10px;
+    margin-bottom:50px;
+    text-align: center;
+    font-size: 13px;
+}
+.pl-goodswrap .pl-level-bd .pl-level-item:nth-child(4n+0){
+    margin-right:0;
+}
+.pl-goodswrap .pl-level-item .pl-con-hd{
+    position: relative;
+    background-color:rgba(180,160,120,.1);
+}
+.pl-goodswrap .pl-level-item .pl-hd-color{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    height: 20px;
+    padding: 0 5px;
+    font-size: 12px;
+    color: rgb(180,160,120);
+    border: 1px solid rgb(180,160,120);
+    border-radius: 5px;
+    background-color: rgba(180,160,120,.2);
+}
+.pl-goodswrap .pl-level-item .pl-bd-flagwrap{
+    position: absolute;
+    display:block;
+    top:255px;
+    left:0;
+    width:100%;
+    text-align: center;
+}
+.pl-goodswrap .pl-level-item .pl-bd-flag{
+    padding: 0 5px;
+    color:#fff;
+    background-color:#d44646;
+}
+.pl-goodswrap .pl-level-item .pl-name{
+    margin-top:31px;
+    color:#333;
+    font-weight: 700;
+}
+.pl-goodswrap .pl-level-item .pl-price{
+    margin-top:10px;
+    color:#d4282d;
+}
+.pl-goodswrap .pl-level-item .pl-desc{
+    position:relative;
+    padding-top:15px;
+    color:#999;
+}
+.pl-goodswrap .pl-level-item .pl-desc:before{
+    content:'';
+    position: absolute;
+    top:4px;
+    left:50%;
+    width:130px;
+    height:1px;
+    margin-left: -65px;
+    background:#e8e8e8;
 }
