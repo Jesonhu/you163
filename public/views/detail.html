@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header class="header-hook">
@@ -132,16 +133,184 @@
                 <span class="current">全棉针织纯色四件套</span>
             </div>
 
+            <!-- 商品详情顶部内容 -->
             <div class="pd-bd-top clearfix">
                 <div class="pd-slide clearfix">
-                    <dvi class="pd-view"></dvi>
+                    <dvi class="pd-view">
+                        <img :src="goods.viewPicUrl" class="pd-view-img" alt="">
+                    </dvi>
                     <ul class="pd-list">
-                        <li class="pd-item">
-                            <img src="" alt="" class="pd-view-img">
+                        <li class="pd-item"
+                            v-for="item in goods.sthumbs"
+                        >
+                            <img :src="item.img" alt="" class="pd-item-img">
                         </li>
                     </ul>
                 </div>
-                <div class="pd-info"></div>
+
+                <div class="pd-info">
+                    <div class="pd-intro clearfix">
+                        <div class="pd-namewrap">
+                        <div class="pd-name">{{goods.name}}</div>
+                        <a class="pd-tag"
+                           :href="tag.href"
+                           v-if="goods.tagList"
+                           v-for="tag in goods.tagList"
+                        >{{tag.name}}</a>
+                        </div>
+                        <div class="pd-desc">{{goods.desc}}</div>
+                    </div>
+
+                    <!-- 价格 促销 服务 -->
+                    <div class="pd-price-sale-service">
+                        <div class="field pd-price clearfix">
+                            <span class="title">售价</span>
+                            <span class="pd-price-main">
+                            {{goods.retailPrice | rmb}}
+                            </span>
+                        </div>
+                        <div class="field pd-sale clearfix">
+                            <span class="title">促销</span>
+                            <a class="line-overflow pd-sale-name"
+                               v-for="sale in goods.saleList"
+                               :href="sale.href"
+                            >
+                                {{sale.desc}}
+                            </a>
+                        </div>
+                        <div class="field pd-service clearfix">
+                            <span class="title">服务</span>
+                            <div class="pd-service-main line-overflow">
+                                <span class="pd-service-name"
+                                    v-for="service in goods.service"
+                                >{{service.desc}}</span>
+                            </div>
+                        </div>
+
+                        <div class="pd-ratings">
+                            <span class="pd-count">{{goods.commitNum | wan}}</span>
+                            <span class="pd-text">用户评价</span>
+                        </div>
+                    </div>
+                        <div class="field pd-color clearfix">
+                            <span class="title">颜色</span>
+                            <div class="pd-color-list clearfix">
+                                <a href="javascript:;" class="pd-color-item"
+                                   v-for="color in goods.choseColor"
+                                   :title="color.title"
+                                >
+                                    <img :src="color.img" alt="" class="pd-color-img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="field pd-size clearfix">
+                            <span class="title">尺寸</span>
+                            <div class="pd-size-list clearfix">
+                                <a href="javascript:;" class="pd-size-item"
+                                   v-for="size in goods.size"
+                                >
+                                    {{size.name}}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="field pd-count clearfix">
+                            <span class="title">数量</span>
+                            <div class="cartcontroll clearfix">
+                                <span class="btn"></span>
+                                <input type="text" class="count" value="1">
+                                <span class="btn"></span>
+                            </div>
+                        </div>
+
+                        <div class="pd-controll clearfix">
+                            <span class="buy">立即购买</span>
+                            <span class="addcart">加入购物车</span>
+                            <span class="store">收藏</span>
+                        </div>
+
+                </div>
+            </div>
+
+            <!-- 大家都在看 -->
+            <div class="c-row-carousel pd-carousel">
+                <div class="c-title">大家都在看</div>
+                <div class="c-main">
+                    <div class="c-picwrap">
+                        <ul class="c-list clearfix">
+                            <li class="c-item"
+                                v-for="item in sameList"
+                            >
+                                <div class="c-item-imgwrap">
+                                    <span class="c-item-color"
+                                          v-if="item.color"
+                                    >{{item.color}}</span>
+                                    <a :href="item.link" class="c-link">
+                                        <img :src="item.picUrl" class="imgScale" alt="">
+                                    </a>
+                                </div>
+                                <h3 class="c-name">
+                                    <a :href="item.link" class="c-link">{{item.name}}</a>
+                                </h3>
+                                <div class="c-price">{{item.price | rmb('￥')}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c-arrowwrap">
+                        <button class="bg-normal c-arrow prev"></button>
+                        <button class="bg-normal c-arrow next"></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="pd-bd clearfix">
+                <!-- 详情和评价 -->
+                <div class="pd-bd-left"></div>
+
+                <!-- 右侧热销 专题 -->
+                <div class="pd-bd-right">
+
+                    <!-- 热销 -->
+                    <div class="pd-bd-r-hotsale c-col-hotsale">
+                        <div class="c-c-title">24小时热销榜</div>
+                        <ul class="c-picwrap-list">
+                            <li class="c-picwrap-item"
+                                v-for="item in hotSale"
+                            >
+                                <a :href="item.link" class="c-link">
+                                    <div class="c-item-imgwrap">
+                                        <span class="c-item-color"
+                                              v-if="item.color"
+                                        >{{item.color}}</span>
+
+                                            <img :src="item.picUrl" class="imgScale img" alt="">
+
+                                    </div>
+                                    <h3 class="c-name line-overflow">
+                                        {{item.name}}
+                                    </h3>
+                                    <div class="c-price">{{item.price | rmb('￥')}}</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 专题推荐 -->
+                    <div class="pd-bd-r-recommend c-col-hotsale">
+                        <div class="c-c-title">专题推荐</div>
+                        <ul class="c-picwrap-list">
+                            <li class="c-picwrap-item"
+                                v-for="item in topicsRecommended"
+                            >
+                                <a :href="item.link" class="c-link">
+                                        <img :src="item.picUrl" alt="" class="img">
+                                    <p class="name">{{item.name}}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

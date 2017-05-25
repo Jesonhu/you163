@@ -54,9 +54,24 @@ a{
     background: url(../img/cart.png) no-repeat;
 }
 .bg-badge,
-.bg-arrow,
 .bg-normal{
     background: url(../img/icon-normal.png) no-repeat;
+}
+/* · 样式 */
+.c-icon-point{
+    display:inline-block;
+    width:3px;
+    height:3px;
+    vertical-align: top;
+    background: url(../img/icon-normal.png) no-repeat;
+    background-position: 0 -4067px;
+}
+/* 超出部分显示省略号 */
+.line-overflow{
+    max-width:431px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 /* 下拉框 */
 .xs-dropdown{
@@ -856,6 +871,7 @@ a{
     top:0;
     left:0;
 }
+.c-fadebanner .fade-arrow .bg-normal,
 .c-fadebanner .fade-arrow .bg-arrow{
     position: absolute;
     top:50%;
@@ -864,13 +880,16 @@ a{
     border:0;
     background-color:#303030;
 }
+.c-fadebanner .fade-arrow .bg-normal:hover,
 .c-fadebanner .fade-arrow .bg-arrow:hover{
     background-color:rgb(180,160,120);
 }
+.c-fadebanner .fade-normal .prev,
 .c-fadebanner .fade-arrow .prev{
     left:0;
     background-position: 0 -5215px;
 }
+.c-fadebanner .fade-normal .next,
 .c-fadebanner .fade-arrow .next{
     right:0;
     background-position: 0 -5345px;
@@ -893,4 +912,110 @@ a{
 .c-fadebanner .fade-nav .fade-nav-item.is-active{
     background:0 0;
     border-color:rgb(180,160,120);
+}
+
+/* 产品详情页横向轮播 */
+.c-row-carousel{
+    width:100%;   
+}
+.c-row-carousel .c-title{
+    height:44px;
+    line-height: 44px;
+    font-size: 17px;
+    text-indent:18px;
+    background-color:rgba(180,160,120,.1);
+}
+.c-row-carousel .c-main{
+    height: 299px;
+    margin: 12px 79px 0;
+}
+.c-row-carousel .c-picwrap{
+    overflow: hidden;
+}
+.c-row-carousel .c-main .c-list{
+    width:800%;
+}
+.c-row-carousel .c-main .c-item{
+    position: relative;
+    float:left;
+    margin-right:30px;
+    text-align: center;
+}
+.c-row-carousel .c-item-imgwrap .c-item-color{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    height: 20px;
+    padding: 0 5px;
+    font-size: 12px;
+    color: rgb(180,160,120);
+    border: 1px solid rgb(180,160,120);
+    border-radius: 5px;
+    background-color: rgba(180,160,120,.2);
+}
+.c-row-carousel .c-name > .c-link{
+    color:#333;
+    font-weight: 700;
+}
+.c-row-carousel .c-item > .c-price{
+    margin-top:10px;
+    color:#d4282d;
+    font-size:13px;
+}
+.c-row-carousel .c-main{
+    position: relative;
+}
+.c-row-carousel .c-main > .c-arrowwrap .c-arrow{
+    position: absolute;
+    display:block;
+    top:50%;
+    outline:0;
+    border:0;
+    border-radius: 50%;
+    background-color:rgb(180,160,120);
+}
+.c-row-carousel .c-main > .c-arrowwrap .prev{
+    left:-45px;
+}
+.c-row-carousel .c-main > .c-arrowwrap .next{
+    right:-45px;
+}
+
+/* 竖向列表 */
+.c-col-hotsale{
+    border:1px solid #e8e8e8;
+    text-align: center;
+}
+.c-col-hotsale .c-c-title{
+    height:42px;
+    line-height: 42px;
+    font-weight: 700;
+    font-size: 18px;
+    color:#333;
+    border-bottom:1px solid #e8e8e8;
+    background-color:rgba(180,160,120,.1);
+}
+.c-col-hotsale .c-picwrap-item{
+    position: relative;
+    border-bottom:1px solid #e8e8e8;
+}
+.c-col-hotsale .c-item-color{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    height: 20px;
+    padding: 0 5px;
+    font-size: 12px;
+    color: rgb(180,160,120);
+    border: 1px solid rgb(180,160,120);
+    border-radius: 5px;
+    background-color: rgba(180,160,120,.2);
+}
+.c-col-hotsale .c-item-imgwrap{
+    width:100%;
+    overflow: hidden;
+}
+.c-col-hotsale .c-item-imgwrap > .img{
+    max-width:100%;
+    height:auto;
 }

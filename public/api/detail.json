@@ -5,6 +5,7 @@
       "id": 1,
       "list": 1,
       "itemList": 3,
+      "viewPicUrl": "/img/detail/view01.jpg",
       "sthumbs": [
         {
           "img": "/img/detail/detail_col_01.jpg"
@@ -42,7 +43,7 @@
           "desc": "520买满就送活动"
         }
       ],
-      "server": [
+      "service": [
         {
           "desc": "30天无忧退货"
         },
