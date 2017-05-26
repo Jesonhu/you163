@@ -114,6 +114,9 @@
         ],
         "from": "中国江苏",
         "picUrl": "/img/detail/detail01.jpg",
+        "report": {
+          "picUrl": "/img/detail/report01.jpg"
+        },
         "question": [
           {
             "qs": "购买运费如何收取？",

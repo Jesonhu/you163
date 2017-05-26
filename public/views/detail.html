@@ -265,7 +265,132 @@
 
             <div class="pd-bd clearfix">
                 <!-- 详情和评价 -->
-                <div class="pd-bd-left"></div>
+                <div class="pd-bd-left">
+                    <div class="pd-bd-nav">
+                        <ul class="pd-bd-nav-list clearfix">
+                            <li class="pd-bd-nav-item">详情</li>
+                            <li class="pd-bd-nav-item">评价</li>
+                        </ul>
+                    </div>
+
+                    <!-- 详情内容 -->
+                    <div class="pd-bd-html tab-con-hook" style="display: none">
+                        <ul class="pd-bd-attrlist">
+                            <li class="pd-bd-arrtitem">
+                                <div class="pd-name">材质</div>
+                                <div class="pd-value">{{goods.goodsDetail.ingredient}}</div>
+                            </li>
+                            <li class="pd-bd-arrtitem">
+                                <div class="pd-name">尺寸</div>
+                                <div class="pd-value pd-size">
+                                    <p v-for="size in goods.goodsDetail.size">{{size.text}}</p>
+                                </div>
+                            </li>
+                            <li class="pd-bd-arrtitem">
+                                <div class="pd-name">执行标准</div>
+                                <div class="pd-value">{{goods.goodsDetail.standard}}</div>
+                            </li>
+                            <li class="pd-bd-arrtitem">
+                                <div class="pd-name">颜色</div>
+                                <div class="pd-value">
+                                    <span class="pd-color"
+                                        v-for="color in goods.goodsDetail.color"
+                                    >{{color.text}}</span>
+                                </div>
+                            </li>
+                            <li class="pd-bd-arrtitem">
+                                <div class="pd-name">产地</div>
+                                <div class="pd-value">{{goods.goodsDetail.from}}</div>
+                            </li>
+                        </ul>
+
+                        <!--图片介绍-->
+                        <div class="pd-bd-imgdetail">
+                            <img :src="goods.goodsDetail.picUrl" alt="">
+                        </div>
+
+                        <!--自检报告-->
+                        <div class="pd-bd-report pd-c">
+                            <div class="pd-bd-title c-title">自检报告</div>
+                            <div class="pd-bd-r-main">
+                                <a href="" class="pd-bd-link">
+                                    <img :src="goods.goodsDetail.report.picUrl" alt="" class="pd-bd-img">
+                                    <i class="bg-normal pd-bd-zoomout z5"></i>
+                                    <div class="mask z10">
+                                        <span class="text">
+                                            查看完整报告
+                                            <i class="bg-arrow arrow-right-white z10"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- qa -->
+                        <div class="pd-hd-qa pd-c">
+                            <div class="c-title">常见问题</div>
+                            <div class="pd-bd-qa-main">
+                                <ul class="pd-list">
+                                    <li class="pd-item"
+                                        v-for="qa in goods.goodsDetail.question"
+                                    >
+                                        <p class="question">{{qa.qs}}</p>
+                                        <p class="answer">{{qa.an}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 评论内容 -->
+                    <div class="pd-bd-commit c-commit tab-con-hook">
+                        <div class="pd-bd-commit-slected c-commit-selected clearfix">
+                            <div class="c-radio c-c-s-all is-active">
+                                <input type="radio" class="radio" name="commentCategory" value="0">
+                                <label for="allComment" class="all">全部(999+)</label>
+                            </div>
+                            <div class="c-radio c-c-s-haspic">
+                                <input type="radio" class="radio" name="commentCategory" value="1">
+                                <label for="picComment" class="haspic">有图(58)</label>
+                            </div>
+                        </div>
+                        <ul class="pd-bd-commit-list">
+                            <li class="pd-bd-commit-item clearfix"
+                                v-for="commit in goods.ratings"
+                            >
+                                <div class="c-commituser">
+                                    <div class="c-avatarwrap">
+                                        <img :src="commit.frontUserAvatar?commit.frontUserAvatar:`/img/avatardefault.png`" class="c-avatar" alt="">
+                                    </div>
+                                    <div class="username-hasicon">
+                                        <a href="" class="c-vip" :class="`vip-${commit.memberLevel}`"></a>
+                                        <div class="c-username">{{commit.frontUserName}}</div>
+                                    </div>
+                                </div>
+                                <div class="c-commitcon">
+                                    <div class="c-content" v-if="commit.content">{{commit.content}}</div>
+                                    <ul class="c-piclist clearfix" v-if="commit.picList">
+                                        <li class="c-picitem"
+                                            v-for="pic in commit.picList"
+                                        >
+                                            <img :src="pic" alt="" class="c-img">
+                                        </li>
+                                    </ul>
+
+                                    <div class="c-meta clearfix">
+                                        <div class="skuinfo">
+                                            <span class="info-item"
+                                                v-for="type in commit.skuInfo"
+                                            >{{type}}</span>
+                                        </div>
+                                        <div class="pubitem">{{commit.createTime | time}}</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pd-bd-commitpager"></div>
+                </div>
 
                 <!-- 右侧热销 专题 -->
                 <div class="pd-bd-right">
