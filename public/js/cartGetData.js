@@ -4,6 +4,11 @@ let cart = new Vue({
       cart: null, // 购物车
       mayLike: [] // 猜你喜欢
     },
+    filters: {
+      rmb(val) {
+         return `￥${val}.00`;
+      }
+    },
     mounted() {
         this.$nextTick(() => {
             this.conView();

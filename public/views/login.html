@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>购物车</title>
+    <title>登录</title>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.3.3/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/axios/0.16.1/axios.min.js"></script>
@@ -51,7 +51,7 @@
         </div>
 
         <!-- logo tab区域 -->
-        <div class="hd-tabwrap hd-tabwrap-hook z5">
+        <div class="hd-tabwrap hd-tabwrap-hook">
             <div class="container">
                 <div class="clearfix logowrap">
                     <a href="" class="hd-logo"></a>
@@ -59,7 +59,7 @@
                         <div class="search-con clearfix">
                             <div class="search-input-wrap z50">
                                 <input type="text" class="search-input hd-input-hook" maxlength="100" autocomplete="off" placeholder="
-        Crocs制造商新款拖鞋券后9块9">
+    Crocs制造商新款拖鞋券后9块9">
                                 <div class="search-hotkey">
                                     <ul class="hotkey-list">
                                         <li class="hotkey-item hotkey-hook" v-for="item in searchHotKeyList">{{item.text}}</li>
@@ -123,165 +123,41 @@
 
     </header>
 
-    <div class="pc-cart-bd body-hook">
+    <!-- 登录 -->
+    <div class="pd-login">
         <div class="container">
-
-            <!-- 购物车部分 -->
-            <div class="c-cart-body">
-                <div class="c-cart-lazy" style="display: none">
-                    <img src="/img/cartlazy.gif" alt="" class="img">
-                </div>
-
-                <div class="c-cart-main">
-                    <div class="c-cart-title">
-                        <ul class="c-cart-title-list clearfix">
-                            <li class="c-cart-title-item">
-                                <input type="checkbox" class="cart-checkbox">
-                                <span class="all">全选</span>
-                            </li>
-                            <li class="c-cart-title-item">商品信息</li>
-                            <li class="c-cart-title-item">单价</li>
-                            <li class="c-cart-title-item">数量</li>
-                            <li class="c-cart-title-item">小计</li>
-                            <li class="c-cart-title-item">活动</li>
-                        </ul>
-                    </div>
-                    <div class="c-cart-content">
-                        <ul class="c-cart-list">
-                            <li class="c-cart-item clearfix"
-                                v-for="good in cart.cartGroupList[0].cartItemList"
-                            >
-                                <div class="item checkoutwrap">
-                                    <input type="checkbox" class="cart-checkbox">
+            <div class="pd-login-main">
+                <div class="pd-loginformwrap">
+                    <div class="pd-login-title">网易帐号登录</div>
+                    <div class="pd-login-body">
+                        <form id="login-form">
+                            <div class="usernamewrap">
+                                <div class="user-icon"></div>
+                                <div class="user-input">
+                                    <input type="text" class="username">
+                                    <div class="auto-remember"></div>
                                 </div>
-                                <div class="item detail">
-                                    <div class="pic">
-                                        <a href="" class="link">
-                                            <img class="img" :src="good.pic" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="namecon">
-                                        <a href="" class="name link">{{good.itemName}}</a>
-                                        <div class="spec">
-                                            <a href="" class="size">{{good.specList[0].specValue}}</a>
-                                            <i class="bg-arrow bg-arrow-arrow-down"></i>
-                                        </div>
-                                    </div>
-                                    <div class="selectskucon"></div>
-                                </div>
-                                <div class="item price">{{good.retailPrice | rmb}}</div>
-                                <div class="item count">
-                                    <div class="item c-count">
-                                        <span class="btn"></span>
-                                        <input type="text" class="count" :value="cart.cnt">
-                                        <span class="btn"></span>
-                                    </div>
-                                </div>
-                                <div class="item total">{{good.totalPrice | rmb}}</div>
-                                <div class="item active"></div>
-                                <div class="bg-normal close"></div>
-                                <hr class="line left">
-                                <hr class="line right">
-                            </li>
-                        </ul>
-                        <div class="c-cart-empty" style="display: none"></div>
-                    </div>
-                    <div class="c-cart-total clearfix">
-                        <div class="selectwrap">
-                            <input type="text" class="select cart-checkbox">
-                            <div class="count">已选(0)</div>
-                        </div>
-                        <div class="empty">批量删除</div>
-                        <div class="pay">下单</div>
-                        <div class="info">
-                            <div class="line">
-                                <div class="tip">
-                                    <span class="count">商品合计&nbsp;:&nbsp;￥0.00&nbsp;&nbsp;</span>
-                                    <span class="reduce">活动优惠&nbsp;:&nbsp;-￥0.00</span>
-                                    <span class="shouldpay">应付总额&nbsp;:&nbsp;&nbsp;<span class="price">￥0.00</span></span>
-                                </div>
+                                <i class="pd-login-remove-icon"></i>
                             </div>
-                            <div class="line">
-                                <a href="" class="link">再购¥88.00免邮,去凑单></a>
+                            <div class="pwdwrap">
+                                <div class="pwd-icon"></div>
+                                <div class="pwd-input">
+                                    <input type="password" class="passworld">
+                                </div>
+                                <i class="pd-login-remove-icon"></i>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cart-empty" style="display: none">
-                    <div class="main">
-                        <i class="bg-shop-cart c-cart"></i>
-                        <p class="text">购物车还是空滴</p>
-                        <div class="btnwrap">
-                            <a href="" class="btn login" style="display: none">登录</a>
-                            <a href="" class="btn countineshop">继续逛</a>
-                        </div>
+                            <div class="c-loginerror">
+                                <i class="error-icon"></i>
+                                <div class="error-text">请输入账号</div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
-
-            <!--猜你喜欢-->
-            <div class="c-row-carousel pc-carousel">
-                <div class="c-title">猜你喜欢</div>
-                <div class="c-main">
-                    <div class="c-picwrap">
-                        <ul class="c-list clearfix">
-                            <li class="c-item"
-                                v-for="item in mayLike"
-                            >
-                                <div class="c-item-imgwrap">
-                                    <span class="c-item-color"
-                                          v-if="item.color"
-                                    >{{item.color}}</span>
-                                    <a :href="item.link" class="c-link">
-                                        <img :src="item.picUrl" class="imgScale" alt="">
-                                    </a>
-                                </div>
-                                <h3 class="c-name">
-                                    <a :href="item.link" class="c-link">{{item.name}}</a>
-                                </h3>
-                                <div class="c-price">{{item.price | rmb('￥')}}</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c-arrowwrap">
-                        <button class="bg-normal c-arrow prev"></button>
-                        <button class="bg-normal c-arrow next"></button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <footer class="footer no-border footer-hook">
-        <div class="container">
-            <div class="contact-bd">
-                <div class="contact-item item-service">
-                    <h4 class="hd">客服电话</h4>
-                    <p class="phone">400-0368-163</p>
-                    <p class="datetime">9:00-22:00</p>
-                    <a href="" class="feedback">用户反馈</a>
-                    <a href="" class="kefu">在线客服</a>
-                </div>
-                <div class="contact-item aboutus">
-                    <h4 class="hd">何为严选</h4>
-                    <p class="desc">网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
-                    <div class="view">
-                        <span class="text">关注我们:</span>
-                        <span class="bg-normal yx"></span>
-                        <span class="bg-normal wx"></span>
-                        <span class="bg-normal wb"></span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <h4 class="hd">扫码下载严选</h4>
-                    <img src="/img/appdown.png" class="img" width="104" height="104" alt="" class="downewm">
-                    <p class="downdesc">下载领1000元新人礼包</p>
-                </div>
-            </div>
-        </div>
+    <footer class="footer no-border login-footer footer-hook">
         <div class="footer-floor2">
             <div class="container">
                 <div class="f2-main">
@@ -345,7 +221,6 @@
     </div>
 
     <script src="../js/commonGetData.js"></script>
-    <script src="../js/cartGetData.js"></script>
     <script src="../js/show.js"></script>
 </body>
 </html>

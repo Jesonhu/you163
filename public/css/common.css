@@ -1146,6 +1146,10 @@ a{
     float:right;
 }
 /* 购物车 */
+.c-cart-body{
+    margin-top: 20px;
+    margin-bottom: 40px;   
+}
 .c-cart-body .c-cart-main .c-cart-title{
     padding:12px 0;
     margin-bottom: 20px;
@@ -1158,22 +1162,7 @@ a{
     width:200px;
     text-align: center;
 }
-.c-cart-body .c-cart-title-item input[type=checkbox]{
-    display:inline-block;
-    float:left;
-    width:18px;
-    height:18px;
-    outline: 0;
-    border:0;
-    border-radius: 0;
-    -webkit-appearance: none;
-    -moz--webkit-appearance: none;
-    appearance: none;
-    background-image: url(/img/widget.png);
-    background-repeat: no-repeat;
-    background-position: 0 -84px;
-}
-.c-cart-body .c-cart-title-item input[checked=checked]{
+.c-cart-body .c-cart-main input.cart-checkbox[checked=checked]{
     background-position: 0 -56px;
 }
 .c-cart-body .c-cart-title-item .all{
@@ -1197,12 +1186,33 @@ a{
     border:1px solid #ddd;
 }
 .c-cart-body .c-cart-content .c-cart-item{
-    padding:20px 0;
     position: relative;
+    padding:20px 0;
     border-bottom:1px dashed #eaeaea;
+}
+.c-cart-body .c-cart-content .c-cart-item .line{
+    position: absolute;
+    bottom:-1px;
+    display: block;
+    margin:0;
+    padding:0;
+    height:1px;
+    border:0;
+    background-color:#fff;
+}
+.c-cart-body .c-cart-content .c-cart-item .left{
+    left:0;
+    width:60px;
+}
+.c-cart-body .c-cart-content .c-cart-item .right{
+    right:0;
+    width:30px;
 }
 .c-cart-body .c-cart-content .c-cart-item:last-child{
     border-bottom:0;
+}
+.c-cart-body .c-cart-content .c-cart-item:last-child .line{
+    background-color:transparent;
 }
 .c-cart-body .c-cart-content .c-cart-item .item{
     float:left;
@@ -1214,7 +1224,7 @@ a{
     justify-content: center;
     align-items: center;
 }
-.c-cart-body .c-cart-content .c-cart-item input[type="checkbox"]{
+.c-cart-body input[type="checkbox"]{
     display: inline-block;
     float: left;
     width: 18px;
@@ -1236,9 +1246,145 @@ a{
     border:1px solid #eaeaea;
 }
 .c-cart-body .c-cart-item .detail > .namecon{
-    float:left;
+    float:right;
     width:242px;
-    margin-left:42px;
+    margin-top:21px;
+    padding-left: 42px;
+    font-size: 14px;
+}
+.c-cart-body .detail > .namecon > .name{
+    display: block;
+    color:#333;
+}
+.c-cart-body .detail > .namecon .spec{
+    position: relative;
+    margin-top:9px;
+    line-height: 16px;
+    float:left;
+    cursor: pointer;
+}
+.c-cart-body .detail > .namecon .spec .size{
+    float:left;
+    font-size: 12px;
+    color:#999;
+}
+.c-cart-body .detail > .namecon .spec .bg-arrow-arrow-down{
+    position: relative;
+    display:inline-block;
+    margin-left:8px;
+    top:8px;
+    width:8px;
+    height:4px;
+    float:left;
+    background-position: 0 -137px;
+}
+.c-cart-body .c-cart-item > .detail{
+    width:323px;
+}
+.c-cart-body .c-cart-item > .price{
+    width:122px;
+    margin-top: 36px;
+    text-align: center;
+    font-size: 14px;
+}
+.c-cart-body .c-cart-item > .count{
+    width:199px;
+    margin-top: 29px;
+    font-size: 14px;
+}
+.c-cart-body .c-cart-item > .count .c-count{
+    margin-left: 30px;
+}
+.c-cart-body .c-cart-item > .total{
+    width:133px;
+    margin-top: 36px;
+    color:#d4282d;
+    text-align: center;
+    font-size: 14px;
+}
+.c-cart-body .c-cart-item > .active{
+    width:200px;
+    text-align: center;
+}
+.c-cart-body .c-cart-item > .close{
+    position: absolute;
+    top:59px;
+    right:32px;
+    width:11px;
+    height:10px;
+    background-position: 0 -460px;
+}
+.c-cart-body .c-cart-main .c-cart-total{
+    margin-top:10px;
+    height:66px;
+    border:1px solid #ddd;
+    background-color:#f5f5f5;
+}
+.c-cart-body .c-cart-total .selectwrap{
+    float:left;
+    margin-left:20px;
+    margin-top: 23px;
+}
+.c-cart-body .c-cart-total .selectwrap .select{
+    display: inline-block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz--webkit-appearance: none;
+    appearance: none;
+    background-image: url(/img/widget.png);
+    background-repeat: no-repeat;
+    background-position: 0 -84px;
+}
+.c-cart-body .c-cart-total .selectwrap .count{
+    display: inline-block;
+    margin-left:14px;
+}
+.c-cart-body .c-cart-total .empty{
+    float:left;
+    margin-left:30px;
+    margin-top: 23px;
+}
+.c-cart-body .c-cart-total .info{
+    float:right;
+    font-size: 14px;
+    color:#999;
+}
+.c-cart-body .c-cart-total .shouldpay{
+    color:#333;
+}
+.c-cart-body .c-cart-total .shouldpay > .price{
+    color:#d4282d;
+    font-weight: 700;
+    font-size: 22px;
+}
+.c-cart-body .c-cart-total .pay{
+    float:right;
+    width:140px;
+    height: 66px;
+    line-height: 66px;
+    margin-top:-1px;
+    margin-right:-1px;
+    margin-left:25px;
+    color:#fff;
+    text-align: center;
+    font-size: 18px;
+    background-color: #ccc;
+    border:1px solid #ccc;
+}
+.c-cart-body .c-cart-total .pay.is-active{
+    background-color: rgb(180,160,120);
+    border:1px solid rgb(180,160,120);
+}
+.c-cart-body .c-cart-total .line{
+    text-align: right;
+}
+.c-cart-body .c-cart-total .line > .link{
+    color:#d4282d;  
 }
 /* 购物数量控制按钮 */
 .c-count{
@@ -1289,4 +1435,58 @@ a{
     border-top: 0;
     border-bottom: 0;
     text-align: center;
+}
+/* 懒加载准备  */
+.c-cart-lazy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:1090px;
+    height:352px;
+    border:1px solid #ddd;
+}
+.c-cart-lazy > .img{
+    width:36px;
+    height:36px;
+}
+ /* 购物车是空滴 */
+ .cart-empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:1090px;
+    height:504px;
+    margin-top: 10px;
+    border:1px solid #ddd;
+ }
+.cart-empty > .main{
+    width:240px;
+    text-align: center;
+}
+.cart-empty > .main .c-cart{
+    display: block;
+    margin: 0 auto;
+    width:53px;
+    height:50px;
+    background-position: 0 -97px;
+}
+.cart-empty > .main .text{
+    margin-top:15px;
+    font-size: 18px;
+    color:#333;
+}
+.cart-empty > .main .btnwrap{
+    margin-top:20px;
+}
+.cart-empty > .main .btnwrap .btn{
+    display:block;
+    width:100px;
+    height:40px;
+    line-height: 38px;
+    margin:0 auto;
+    border:1px solid rgb(180,160,120);
+    border-radius: 3px;
+    font-size: 16px;
+    color:rgb(180,160,120);
+    background-color: rgba(180,160,120,.1);
 }
