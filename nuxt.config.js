@@ -12,15 +12,16 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: '/assets/css/reset.css' },
-      { rel: 'stylesheet', type: 'text/css', href: '/reset.css' }
+      { rel: 'stylesheet', type: 'text/css', href: '/css/reset.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/css/common.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/css/style.css' }
     ]
   },
   /**
    * 全局css配置
    */
   css: [
-    '~assets/css/reset.css' // 全局添加内部样式
+    // '~assets/css/reset.css' // 全局添加内部样式
   ],
   /*
   ** Customize the progress-bar color
@@ -30,6 +31,8 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    // 多个页面引入打包多次
+    vendor: ['axios'],
     /*
     ** Run ESLINT on save
     */

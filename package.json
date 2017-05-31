@@ -5,6 +5,7 @@
   "author": "jesonhu <jesonhu_web@163.com>",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.1",
     "nuxt": "latest"
   },
   "scripts": {
