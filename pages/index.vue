@@ -246,7 +246,7 @@
     </div>
 
     <!-- 右侧固定导航 -->
-    <fiexed-tool/>
+    <fixed-tool/>
 
     <!-- 底部导航 -->
     <v-footer :footerList="footerList"/>
@@ -255,7 +255,7 @@
 
 <script>
   import vHeader from '~components/header'
-  import fiexedTool from '~components/fixedTool'
+  import fixedTool from '~components/fixedTool'
   import vFooter from '~components/footer'
   import axios from 'axios'
 
@@ -273,7 +273,7 @@
     components: {
       vHeader,
       vFooter,
-      fiexedTool
+      fixedTool
     },
     /* nuxt 相关 */
     head () {
