@@ -1331,6 +1331,10 @@
     border:1px solid #e8e8e8;
     border-radius: 3px;
 }
+.pd-login .pd-login-body .usernamewrap.is-error,
+.pd-login .pd-login-body .pwdwrap.is-error{
+    border-color:#fa6060;
+}
 .pd-login .pd-login-body .usernamewrap{
     margin-top: 0;
 }
@@ -1377,4 +1381,133 @@
     width:20px;
     height:20px;
     background:url(/img/webzj_cdnbase.png) -147px -89px no-repeat;
+}
+.pd-login .c-loginerror{
+    height:20px;
+    margin-top:10px;
+}
+.pd-login .c-loginerror .error-icon{
+    display:block;
+    float:left;
+    width:20px;
+    height:20px;
+    margin-right:10px;
+    background:url(/img/error-icon.png) 0 1px no-repeat;
+}
+.pd-login .c-loginerror .error-text{
+    width:250px;
+    line-height: 20px;
+    color:#fa6060;
+    font-size: 12px;
+}
+.pd-login .submitwrap{
+    height:48px;
+    width:300px;
+    margin-top:28px;
+    line-height: 48px;
+    text-align: center;
+}
+.pd-login .submitwrap .submit{
+    width:inherit;
+    height:inherit;
+    border:0;
+    outline:0;
+    border-radius:3px;
+    color:#fff;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 12px;
+    background-color:rgb(180,160,120);
+}
+.pd-login .unloginwrap{
+    display: flex;
+    justify-content: space-between;
+    height:27px;
+    line-height: 27px;
+    margin-top:15px;
+    font-size: 12px;
+}
+.pd-login .unloginwrap .forgetpwd,
+.pd-login .unloginwrap .reg{
+    display: inline-block;
+    color: #999;
+}
+.pd-login .unloginwrap .forgetpwd:hover,
+.pd-login .unloginwrap .reg:hover{
+    color:#000;
+}
+.pd-login .ohtermethod > .title{
+    position: relative;
+    height:26px;
+    line-height: 26px;
+    text-align: center;
+    color:#999;
+    font-size: 12px;
+}
+.pd-login .ohtermethod > .title .text{
+    position: relative;
+    display:inline-block;
+    height: inherit;
+    width:120px;
+    text-align: center;
+    background-color:#fff;
+}
+.pd-login .ohtermethod > .title .line{
+    position: absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:1px;
+    margin:0;
+    padding:0;
+    background-color:#999;
+}
+.pd-login .ohtermethod > .bd{
+    margin-top:30px;
+    text-align: center;
+}
+.pd-login .ohtermethod > .bd .method{
+    display: inline-block;
+    margin-right:48px;
+    font-size: 0;
+    color:#999;
+    cursor: pointer;
+}
+.pd-login .ohtermethod > .bd .method:last-child{
+    margin-right: 0;
+}
+.pd-login .ohtermethod .bd > .method:hover{
+    color:rgb(180,160,120);
+}
+.pd-login .ohtermethod > .bd .method-icon{
+    display: block;
+    width:30px;
+    height:30px;
+    margin:0 auto;
+    background-image:url(/img/other-login.png);
+    background-repeat: no-repeat;
+}
+.pd-login .ohtermethod > .bd .wx-icon{
+    background-position: 0 0;
+}
+.pd-login .ohtermethod .method:hover > .wx-icon{
+    background-position: 0 -32px;
+}
+.pd-login .ohtermethod > .bd .qq-icon{
+    background-position: -73px 0px;
+}
+.pd-login .ohtermethod .method:hover > .qq-icon{
+    background-position: -73px -32px;
+}
+.pd-login .ohtermethod > .bd .wb-icon{
+    background-position: -146px 0px;
+}
+.pd-login .ohtermethod .method:hover > .wb-icon{
+    background-position: -146px -32px;
+}
+.pd-login .ohtermethod > .bd .text{
+    display: block;
+    margin-top:6px;
+    text-align: center;
+    font-size: 12px;
 }
