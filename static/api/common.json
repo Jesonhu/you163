@@ -29,7 +29,7 @@
       {
         "textLink": "",
         "text": "居家",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_jj.png",
@@ -75,7 +75,7 @@
       {
         "textLink": "",
         "text": "餐厨",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_cc.png",
@@ -86,7 +86,7 @@
       {
         "textLink": "",
         "text": "配件",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_cc.png",
@@ -97,7 +97,7 @@
       {
         "textLink": "",
         "text": "服装",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_cc.png",
@@ -108,7 +108,7 @@
       {
         "textLink": "",
         "text": "洗护",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_cc.png",
@@ -119,7 +119,7 @@
       {
         "textLink": "",
         "text": "婴童",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_cc.png",
@@ -130,7 +130,7 @@
       {
         "textLink": "",
         "text": "杂货",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_cc.png",
@@ -141,7 +141,7 @@
       {
         "textLink": "",
         "text": "饮食",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_cc.png",
@@ -152,7 +152,7 @@
       {
         "textLink": "",
         "text": "志趣",
-        "childNavList" : [
+        "childNavList": [
           {
             "Link": "",
             "picUrl": "/img/item_list_cc.png",
@@ -170,34 +170,34 @@
       }
     ],
     "footerList": [
-    {
-      "link": "",
-      "text": "关于我们"
-    },
-    {
-      "link": "",
-      "text": "帮助中心"
-    },
-    {
-      "link": "",
-      "text": "售后服务"
-    },
-    {
-      "link": "",
-      "text": "配送与验收"
-    },
-    {
-      "link": "",
-      "text": "商务合作"
-    },
-    {
-      "link": "",
-      "text": "企业采购"
-    },
-    {
-      "link": "",
-      "text": "友情链接"
-    }
-  ]
+      {
+        "link": "",
+        "text": "关于我们"
+      },
+      {
+        "link": "",
+        "text": "帮助中心"
+      },
+      {
+        "link": "",
+        "text": "售后服务"
+      },
+      {
+        "link": "",
+        "text": "配送与验收"
+      },
+      {
+        "link": "",
+        "text": "商务合作"
+      },
+      {
+        "link": "",
+        "text": "企业采购"
+      },
+      {
+        "link": "",
+        "text": "友情链接"
+      }
+    ]
   }
 }

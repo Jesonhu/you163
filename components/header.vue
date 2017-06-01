@@ -36,7 +36,6 @@
         </div>
       </div>
     </div>
-
     <!-- logo tab区域 -->
     <div class="hd-tabwrap hd-tabwrap-hook">
       <div class="container">
@@ -107,22 +106,12 @@ Crocs制造商新款拖鞋券后9块9">
 
       </div>
     </div>
-
   </header>
 </template>
 
 <script>
-  import axios from 'axios';
-
   export default {
     name: 'header',
-    props: ['searchHotKeyList', 'tabNav'],
-    data() {
-      return {
-      }
-    }
+    props: ['searchHotKeyList', 'tabNav']
   }
 </script>
-
-<style>
-</style>
