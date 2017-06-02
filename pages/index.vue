@@ -257,7 +257,7 @@
   import vHeader from '~components/header'
   import fixedTool from '~components/fixedTool'
   import vFooter from '~components/footer'
-  import axios from 'axios'
+  import axios from '~plugins/axios'
 
   export default {
     data () {
@@ -296,26 +296,25 @@
 //      })
 //    }
     async asyncData() {
-        try {
-          let data = {};
-          data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
-          data.indexData = await axios.get('http://127.0.0.1:3000/api/index.json');
-
-          return {
-            searchHotKeyList: data.commonData.data.result.SearchWordsList,
-            tabNav: data.commonData.data.result.navList,
-            footerList: data.commonData.data.result.footerList,
-            bannerList: data.indexData.data.result.bannerList,
-            ppzzs: data.indexData.data.result.ppzzs,
-            xpsf: data.indexData.data.result.xpsf,
-            rqtj: data.indexData.data.result.rqtj,
-            jj: data.indexData.data.result.jj,
-            zxj: data.indexData.data.result.zxj,
-            djdzs: data.indexData.data.result.djdzs
-          }
-        } catch (err) {
-          console.log(err);
-        }
+      let data = {};
+      try {
+        data.commonData = await axios.get('/api/common.json');
+        data.indexData = await axios.get('/api/index.json');
+      } catch (err) {
+        console.log(err);
+      }
+      return {
+        searchHotKeyList: data.commonData.data.result.SearchWordsList,
+        tabNav: data.commonData.data.result.navList,
+        footerList: data.commonData.data.result.footerList,
+        bannerList: data.indexData.data.result.bannerList,
+        ppzzs: data.indexData.data.result.ppzzs,
+        xpsf: data.indexData.data.result.xpsf,
+        rqtj: data.indexData.data.result.rqtj,
+        jj: data.indexData.data.result.jj,
+        zxj: data.indexData.data.result.zxj,
+        djdzs: data.indexData.data.result.djdzs
+      }
     }
   }
 </script>

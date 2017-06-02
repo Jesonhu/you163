@@ -335,7 +335,7 @@
   import vHeader from '~components/header';
   import vFooter from '~components/footer';
   import fixedTool from '~components/fixedTool';
-  import axios from 'axios';
+  import axios from '~plugins/axios';
 
   export default {
   // vue
@@ -403,21 +403,21 @@
       }
     },
     async asyncData({ params, error }) {
+      let data = {};
       try {
-        let data = {};
         data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
         data.detailData = await axios.get('http://127.0.0.1:3000/api/detail.json');
-        return {
-          searchHotKeyList: data.commonData.data.result.SearchWordsList,
-          tabNav: data.commonData.data.result.navList,
-          footerList: data.commonData.data.result.footerList,
-          goods: data.detailData.data.result.goodsDetail,
-          sameList: data.detailData.data.result.sameList,
-          hotSale: data.detailData.data.result.hotSale,
-          topicsRecommended: data.detailData.data.result.topicsRecommended,
-        }
       } catch (err) {
         console.log(err);
+      }
+      return {
+        searchHotKeyList: data.commonData.data.result.SearchWordsList,
+        tabNav: data.commonData.data.result.navList,
+        footerList: data.commonData.data.result.footerList,
+        goods: data.detailData.data.result.goodsDetail,
+        sameList: data.detailData.data.result.sameList,
+        hotSale: data.detailData.data.result.hotSale,
+        topicsRecommended: data.detailData.data.result.topicsRecommended,
       }
     }
   }

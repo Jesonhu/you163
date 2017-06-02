@@ -79,7 +79,7 @@
   import vHeader from '~components/header';
   import vFooter from '~components/footer';
   import fixedTool from '~components/fixedTool';
-  import axios from 'axios';
+  import axios from '~plugins/axios';
 
   export default {
     // vuex
@@ -101,7 +101,7 @@
     async asyncData({ params, error }) {
       let data = {};
       try {
-        data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
+        data.commonData = await axios.get('/api/common.json');
       } catch (err) {
         console.log(err);
       }

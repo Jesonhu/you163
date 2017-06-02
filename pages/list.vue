@@ -125,7 +125,7 @@
   import vHeader from '~components/header';
   import vFooter from '~components/footer';
   import fixedTool from '~components/fixedTool';
-  import axios from 'axios'
+  import axios from '~plugins/axios'
 
   export default {
     // vuex
@@ -150,22 +150,22 @@
       }
     },
     async asyncData({ params, error }) {
+      let data = {};
       try {
-        let data = {};
-        data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
-        data.listData = await axios.get('http://127.0.0.1:3000/api/list.json');
-        return {
-          searchHotKeyList: data.commonData.data.result.SearchWordsList,
-          tabNav: data.commonData.data.result.navList,
-          footerList: data.commonData.data.result.footerList,
-          bannerList: data.listData.data.bannerList,
-          sort: data.listData.data.sort,
-          filter: data.listData.data.filter,
-          goods: data.listData.data.goods
-        }
+        data.commonData = await axios.get('/api/common.json');
+        data.listData = await axios.get('/api/list.json');
       } catch (err) {
         console.log(err);
-      }
+      };
+      return {
+        searchHotKeyList: data.commonData.data.result.SearchWordsList,
+        tabNav: data.commonData.data.result.navList,
+        footerList: data.commonData.data.result.footerList,
+        bannerList: data.listData.data.bannerList,
+        sort: data.listData.data.sort,
+        filter: data.listData.data.filter,
+        goods: data.listData.data.goods
+      };
     }
   }
 </script>
