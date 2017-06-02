@@ -863,7 +863,7 @@ a{
 }
 .c-fadebanner .fade-pic .fade-list{
     position:relative;
-    width:100%;   
+    width:100%;
     overflow: hidden;
 }
 .c-fadebanner .fade-pic .fade-item{
@@ -917,7 +917,7 @@ a{
 /* 产品详情页横向轮播 */
 .c-row-carousel{
     width:100%;
-    border:1px solid #e8e8e8;   
+    border:1px solid #e8e8e8;
 }
 .c-row-carousel .c-title{
     height:44px;
@@ -1148,7 +1148,7 @@ a{
 /* 购物车 */
 .c-cart-body{
     margin-top: 20px;
-    margin-bottom: 40px;   
+    margin-bottom: 40px;
 }
 .c-cart-body .c-cart-main .c-cart-title{
     padding:12px 0;
@@ -1166,7 +1166,7 @@ a{
     background-position: 0 -56px;
 }
 .c-cart-body .c-cart-title-item .all{
-    margin-left:14px; 
+    margin-left:14px;
 }
 .c-cart-body .c-cart-main .c-cart-title-item:nth-child(1){
     width:183px;
@@ -1384,7 +1384,7 @@ a{
     text-align: right;
 }
 .c-cart-body .c-cart-total .line > .link{
-    color:#d4282d;  
+    color:#d4282d;
 }
 /* 购物数量控制按钮 */
 .c-count{
@@ -1489,4 +1489,10 @@ a{
     font-size: 16px;
     color:rgb(180,160,120);
     background-color: rgba(180,160,120,.1);
+}
+/* 自定义swiper样式 */
+.swiper-container-autoheight,
+.swiper-container-autoheight .swiper-slide{
+  position:relative;
+  overflow: hidden;
 }

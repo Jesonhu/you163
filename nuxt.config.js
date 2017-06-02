@@ -22,17 +22,21 @@ module.exports = {
    */
   css: [
     // '~assets/css/reset.css' // 全局添加内部样式
+    'swiper/dist/css/swiper.css'
   ],
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: 'red' }, // 刷新条颜色
+  loading: { color: '#B4A078' }, // 刷新条颜色
   /*
   ** Build configuration
   */
   build: {
-    // 多个页面引入打包多次
-    vendor: ['axios'],
+    // 将重复引用的(第三方/自有)模块添加到vendor.bundle.js
+    vendor: [
+      'axios',
+      'swiper'
+    ],
     /*
     ** Run ESLINT on save
     */
@@ -52,5 +56,10 @@ module.exports = {
   },
   dev: {
     baseUrl: process.env.NODE_ENV || 'http://127.0.0.1:3000'
-  }
+  },
+  plugins: [
+    { src: '~plugins/swiper.js', ssr: false },
+    { src: '~plugins/jquery.min.js', ssr: false },
+    { src: '~plugins/show.js', ssr: false }
+  ]
 }

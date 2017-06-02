@@ -9,26 +9,24 @@
     <!-- 主内容区 -->
     <div id="bd-hook" class="bd">
       <!-- banner -->
-      <div class="bd-banner-wrap">
-        <div class="banner-main">
-          <ul class="banner-list">
-            <li class="banner-item z5" v-for="item in bannerList">
+      <div class="swiper" v-swiper:swiper="swiperOption">
+        <div class="swiper-wrapper">
+          <!--<ul class="">-->
+            <div class="swiper-slide" v-for="item in bannerList">
               <a :href="item.link" class="link">
                 <img :src="item.picUrl" alt="">
               </a>
-            </li>
-          </ul>
+            </div>
+          <!--</ul>-->
         </div>
-        <div class="arrow-main">
-          <button class="bg-badge arrow arrow-prev z100"></button>
-          <button class="bg-badge arrow arrow-next z100"></button>
-        </div>
-        <div class="bottom-nav">
-          <ul class="bottom-nav-list clearfix">
-            <li class="bottom-nav-item" v-for="item in bannerList.length">
-              <span class="guide"></span>
-            </li>
-          </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="bottom-nav swiper-pagination">
+          <!--<ul class="bottom-nav-list clearfix">-->
+            <!--<li class="bottom-nav-item" v-for="item in bannerList.length">-->
+              <!--<span class="guide"></span>-->
+            <!--</li>-->
+          <!--</ul>-->
         </div>
       </div>
 
@@ -262,7 +260,21 @@
   export default {
     data () {
       return {
-
+        swiperOption: {
+          autoplay: 3500,
+          setWrapperSize: false, // 开启flex宽度为item宽度总和
+          autoHeight: true,
+          pagination: '.swiper-pagination',
+          paginationClickable: true,
+          prevButton:'.swiper-button-prev',
+          nextButton:'.swiper-button-next',
+          mousewheelControl: false,
+          autoplayDisableOnInteraction: false,
+          observeParents: true,
+          grabCursor: true,
+          preloadImages: false,
+          lazyLoading: true
+        }
       }
     },
     filters: {
