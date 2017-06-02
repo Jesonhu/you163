@@ -181,9 +181,9 @@
         let data = {};
         data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
         data.cartData = await axios.get('http://127.0.0.1:3000/api/cart.json');
-        console.log(data.cartData.data.result);
         return {
           searchHotKeyList: data.commonData.data.result.SearchWordsList,
+          footerList: data.commonData.data.result.footerList,
           tabNav: data.commonData.data.result.navList,
           mayLike: data.cartData.data.result.sameList,
           cart: data.cartData.data.result.cart,

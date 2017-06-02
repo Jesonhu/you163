@@ -94,22 +94,21 @@
         title: '登录',
         meta: [
           {hid: 'keywords', name: 'keywords', content: '登录页'},
-          {hid: 'keywords', name: 'keywords', content: '登录描述'},
+          {hid: 'keywords', name: 'keywords', content: '登录描述'}
         ]
       }
     },
     async asyncData({ params, error }) {
+      let data = {};
       try {
-        let data = {};
         data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
-        data.cartData = await axios.get('http://127.0.0.1:3000/api/cart.json');
-//        console.log(data.cartData.data.result);
-        return {
-          searchHotKeyList: data.commonData.data.result.SearchWordsList,
-          tabNav: data.commonData.data.result.navList
-        }
       } catch (err) {
         console.log(err);
+      }
+      return {
+        searchHotKeyList: data.commonData.data.result.SearchWordsList,
+        tabNav: data.commonData.data.result.navList,
+        footerList: data.commonData.data.result.footerList
       }
     }
   }

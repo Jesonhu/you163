@@ -154,7 +154,6 @@
         let data = {};
         data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
         data.listData = await axios.get('http://127.0.0.1:3000/api/list.json');
-        console.log(data.listData.data.result);
         return {
           searchHotKeyList: data.commonData.data.result.SearchWordsList,
           tabNav: data.commonData.data.result.navList,

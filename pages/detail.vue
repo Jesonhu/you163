@@ -407,11 +407,10 @@
         let data = {};
         data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
         data.detailData = await axios.get('http://127.0.0.1:3000/api/detail.json');
-        console.log(data.detailData.data.result);
         return {
           searchHotKeyList: data.commonData.data.result.SearchWordsList,
           tabNav: data.commonData.data.result.navList,
-
+          footerList: data.commonData.data.result.footerList,
           goods: data.detailData.data.result.goodsDetail,
           sameList: data.detailData.data.result.sameList,
           hotSale: data.detailData.data.result.hotSale,

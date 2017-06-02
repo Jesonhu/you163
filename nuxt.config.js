@@ -49,5 +49,8 @@ module.exports = {
   },
   router: {
     base: '/'
+  },
+  dev: {
+    // baseUrl: process.env.baseUrl || 'http://127.0.0.1:3000'
   }
 }
