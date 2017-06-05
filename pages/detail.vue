@@ -50,7 +50,7 @@
               <div class="field pd-price clearfix">
                 <span class="title">售价</span>
                 <span class="pd-price-main">
-                            {{goods.retailPrice | rmb}}
+                            {{goods.retailPrice | rmb(2,false)}}
                             </span>
               </div>
               <div class="field pd-sale clearfix">
@@ -135,7 +135,7 @@
                   <h3 class="c-name">
                     <a :href="item.link" class="c-link">{{item.name}}</a>
                   </h3>
-                  <div class="c-price">{{item.price | rmb('￥')}}</div>
+                  <div class="c-price">{{item.price | rmb(2)}}</div>
                 </li>
               </ul>
             </div>
@@ -297,7 +297,7 @@
                     <h3 class="c-name line-overflow">
                       {{item.name}}
                     </h3>
-                    <div class="c-price">{{item.price | rmb('￥')}}</div>
+                    <div class="c-price">{{item.price | rmb(2)}}</div>
                   </a>
                 </li>
               </ul>
@@ -371,13 +371,6 @@
       }
     },
     filters: {
-      rmb(val, str) {
-        if (typeof str === 'undefined') {
-          return `${val}.00`;
-        } else {
-          return `${str}${val}.00`;
-        }
-      },
       wan(val) {
         const nVal = Number(val);
         if (nVal >=1000) {
@@ -402,18 +395,18 @@
         ]
       }
     },
-    async asyncData({ params, error }) {
+    async asyncData({ params, error, store }) {
       let data = {};
       try {
-        data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
+//        data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
         data.detailData = await axios.get('http://127.0.0.1:3000/api/detail.json');
       } catch (err) {
         console.log(err);
       }
       return {
-        searchHotKeyList: data.commonData.data.result.SearchWordsList,
-        tabNav: data.commonData.data.result.navList,
-        footerList: data.commonData.data.result.footerList,
+        searchHotKeyList: store.state.header_footer.searchHotKeyList,
+        tabNav: store.state.header_footer.tabNav,
+        footerList: store.state.header_footer.footerList,
         goods: data.detailData.data.result.goodsDetail,
         sameList: data.detailData.data.result.sameList,
         hotSale: data.detailData.data.result.hotSale,

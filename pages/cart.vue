@@ -125,7 +125,7 @@
                   <h3 class="c-name">
                     <a :href="item.link" class="c-link">{{item.name}}</a>
                   </h3>
-                  <div class="c-price">{{item.price | rmb('￥')}}</div>
+                  <div class="c-price">{{item.price | rmb(2)}}</div>
                 </li>
               </ul>
             </div>
@@ -161,11 +161,6 @@
       vFooter,
       fixedTool
     },
-    filters: {
-      rmb(val) {
-        return `￥${val}.00`;
-      }
-    },
     // nuxt
     head() {
       return {
@@ -176,18 +171,18 @@
         ]
       }
     },
-    async asyncData({ params, error }) {
+    async asyncData({ params, error, store }) {
       let data = {};
       try {
-        data.commonData = await axios.get('/api/common.json');
+//        data.commonData = await axios.get('/api/common.json');
         data.cartData = await axios.get('/api/cart.json');
       } catch (err) {
         console.log(err);
       }
       return {
-        searchHotKeyList: data.commonData.data.result.SearchWordsList,
-        footerList: data.commonData.data.result.footerList,
-        tabNav: data.commonData.data.result.navList,
+        searchHotKeyList: store.state.header_footer.searchHotKeyList,
+        tabNav: store.state.header_footer.tabNav,
+        footerList: store.state.header_footer.footerList,
         mayLike: data.cartData.data.result.sameList,
         cart: data.cartData.data.result.cart,
       }

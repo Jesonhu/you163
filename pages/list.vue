@@ -100,7 +100,7 @@
                       <a :href="good.link" class="pl bd-namelink">
                         <h3 class="pl-name">{{good.name}}</h3>
                       </a>
-                      <p class="pl-price">{{good.price | rmb}}</p>
+                      <p class="pl-price">{{good.price | rmb(2)}}</p>
                       <div class="pl-desc">{{good.desc}}</div>
                     </div>
 
@@ -134,11 +134,6 @@
       vFooter,
       fixedTool
     },
-    filters: {
-      rmb(val) {
-        return '￥' + val + '.00';
-      }
-    },
     // nuxt
     head() {
       return {
@@ -149,18 +144,18 @@
         ]
       }
     },
-    async asyncData({ params, error }) {
+    async asyncData({ params, error, store }) {
       let data = {};
       try {
-        data.commonData = await axios.get('/api/common.json');
+//        data.commonData = await axios.get('/api/common.json');
         data.listData = await axios.get('/api/list.json');
       } catch (err) {
         console.log(err);
       };
       return {
-        searchHotKeyList: data.commonData.data.result.SearchWordsList,
-        tabNav: data.commonData.data.result.navList,
-        footerList: data.commonData.data.result.footerList,
+        searchHotKeyList: store.state.header_footer.searchHotKeyList,
+        tabNav: store.state.header_footer.tabNav,
+        footerList: store.state.header_footer.footerList,
         bannerList: data.listData.data.bannerList,
         sort: data.listData.data.sort,
         filter: data.listData.data.filter,

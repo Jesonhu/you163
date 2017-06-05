@@ -256,6 +256,7 @@
   import fixedTool from '~components/fixedTool'
   import vFooter from '~components/footer'
   import axios from '~plugins/axios'
+  import { mapState } from 'vuex'
 
   export default {
     data () {
@@ -282,6 +283,11 @@
       vFooter,
       fixedTool
     },
+    computed: {
+      ...mapState([
+          'counter'
+      ])
+    },
     /* nuxt 相关 */
     head () {
       return {
@@ -302,7 +308,7 @@
 //        error({statusCode: 404, message: 'Get not found'});
 //      })
 //    }
-    async asyncData() {
+    async asyncData({ store }) {
       let data = {};
       try {
         data.commonData = await axios.get('/api/common.json');
@@ -311,9 +317,13 @@
         console.log(err);
       }
       return {
-        searchHotKeyList: data.commonData.data.result.SearchWordsList,
-        tabNav: data.commonData.data.result.navList,
-        footerList: data.commonData.data.result.footerList,
+//        searchHotKeyList: data.commonData.data.result.SearchWordsList,
+        searchHotKeyList: store.state.header_footer.searchHotKeyList,
+//        tabNav: data.commonData.data.result.navList,
+        tabNav: store.state.header_footer.tabNav,
+//        footerList: data.commonData.data.result.footerList,
+        footerList: store.state.header_footer.footerList,
+
         bannerList: data.indexData.data.result.bannerList,
         ppzzs: data.indexData.data.result.ppzzs,
         xpsf: data.indexData.data.result.xpsf,
