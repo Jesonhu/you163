@@ -58,8 +58,10 @@ module.exports = {
     baseUrl: process.env.BASE_URL || 'http://127.0.0.1:3000'
   },
   plugins: [
-    { src: '~plugins/swiper.js', ssr: false },
+    { src: '~plugins/filters.js', ssr: false },
     { src: '~plugins/jquery.min.js', ssr: false },
-    { src: '~plugins/show.js', ssr: false }
+    { src: '~plugins/swiper.js', ssr: false },
+    { src: '~plugins/show.js', ssr: false },
+    { src: '~plugins/show.js', ssr: false },
   ]
 }

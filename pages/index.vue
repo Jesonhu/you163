@@ -277,11 +277,6 @@
         }
       }
     },
-    filters: {
-      rmb(val) {
-        return "￥" + val;
-      }
-    },
     components: {
       vHeader,
       vFooter,
@@ -330,4 +325,3 @@
     }
   }
 </script>
-
