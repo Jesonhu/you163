@@ -263,7 +263,7 @@
 }
 .manufacture-item:nth-child(3){
     margin-top:0;
-} 
+}
 
 /*新品首发*/
 .floor-swiper-bd{
@@ -359,9 +359,15 @@
     display:block;
     width:50px;
     height:50px;
-    background-color:rgba(180,160,120,.2);
+    background-color:rgba(180,160,120,.5);
     border-radius:50%;
     cursor: pointer;
+}
+.floor-swiper-bd .floor-arrow:hover{
+  background-color:rgba(180,160,120,.8);
+}
+.floor-swiper-bd .floor-arrow.is-active{
+  background-color:rgba(180,160,120,.3);
 }
 .floor-swiper-bd .floor-arrow.prev{
     left:-60px;
@@ -431,7 +437,7 @@
 .floor-recomment .floor-tabcon-item:nth-child(7),
 .floor-recomment .marginTop{
     margin-top: 10px;
-} 
+}
 
 /* 甄选家 */
 .floor-zxj .floor-zxj-item{
@@ -508,7 +514,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color:#333;  
+    color:#333;
 }
 .floor-newcomment .floor-newcomment-item .price{
     float:right;
@@ -603,13 +609,13 @@
     right:-20px;
     display:block;
     background-image:url(/img/arrow.png);
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
 }
 .pl-goodswrap .pl-filter .pl-link:nth-child(2):before,
 .pl-goodswrap .pl-filter .pl-link:nth-child(2):after{
     content:'';
     height:5px;
-    width:10px;   
+    width:10px;
 }
 .pl-goodswrap .pl-filter .pl-link:nth-child(2):before{
     content:'';
@@ -799,7 +805,7 @@
 .pd-bd-top .pd-price{
     margin-top:16px;
     color:#d7282d;
-    font-size:28px;   
+    font-size:28px;
 }
 .pd-bd-top .pd-price .title{
     line-height: 29px;
@@ -807,7 +813,7 @@
 .pd-bd-top .pd-price .pd-price-main{
     position:relative;
     padding-left:15px;
-    font-weight: 700; 
+    font-weight: 700;
 }
 .pd-bd-top .pd-price .pd-price-main:before{
     content: "￥";
@@ -1133,7 +1139,7 @@
     color:#fff;
     font-size:14px;
     background-color:rgba(0,0,0,.7);
-    
+
 }
 .pd-bd-r-recommend .c-picwrap-list{
     padding:10px 19px 30px;

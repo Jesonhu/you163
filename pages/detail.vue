@@ -151,13 +151,23 @@
           <div class="pd-bd-left">
             <div class="pd-bd-nav">
               <ul class="pd-bd-nav-list clearfix">
-                <li class="pd-bd-nav-item">详情</li>
-                <li class="pd-bd-nav-item">评价</li>
+                <li class="pd-bd-nav-item"
+                    :class="{'is-active':isShowDetail}"
+                    @click="isShowDetail = !isShowDetail"
+                >
+                  详情
+                </li>
+                <li class="pd-bd-nav-item"
+                    :class="{'is-active':!isShowDetail}"
+                    @click="isShowDetail = !isShowDetail"
+                >
+                  评价
+                </li>
               </ul>
             </div>
 
             <!-- 详情内容 -->
-            <div class="pd-bd-html tab-con-hook" style="display: none">
+            <div class="pd-bd-html tab-con-hook" v-show="isShowDetail">
               <ul class="pd-bd-attrlist">
                 <li class="pd-bd-arrtitem">
                   <div class="pd-name">材质</div>
@@ -226,20 +236,27 @@
 
             </div>
             <!-- 评论内容 -->
-            <div class="pd-bd-commit c-commit tab-con-hook">
+            <div class="pd-bd-commit c-commit tab-con-hook" v-show="!isShowDetail">
               <div class="pd-bd-commit-slected c-commit-selected clearfix">
-                <div class="c-radio c-c-s-all is-active">
+                <div class="c-radio c-c-s-all"
+                     :class="{'is-active':ratingType == 2}"
+                     @click="toggleRatingCon(2)"
+                >
                   <input type="radio" class="radio" name="commentCategory" value="0">
-                  <label for="allComment" class="all">全部(999+)</label>
+                  <label for="allComment" class="all">全部({{ratingTotal.length}})</label>
                 </div>
-                <div class="c-radio c-c-s-haspic">
+                <div class="c-radio c-c-s-haspic"
+                     :class="{'is-active':ratingType == 1}"
+                     @click="toggleRatingCon(1)"
+                >
                   <input type="radio" class="radio" name="commentCategory" value="1">
-                  <label for="picComment" class="haspic">有图(58)</label>
+                  <label for="picComment" class="haspic">有图({{ratingHasPic.length}})</label>
                 </div>
               </div>
-              <ul class="pd-bd-commit-list">
+              <ul class="pd-bd-commit-list" v-show="goods.ratings || goods.ratings.length">
                 <li class="pd-bd-commit-item clearfix"
                     v-for="commit in goods.ratings"
+                    v-show="ratingShow(commit.hasPicList)"
                 >
                   <div class="c-commituser">
                     <div class="c-avatarwrap">
@@ -337,8 +354,15 @@
   import fixedTool from '~components/fixedTool';
   import axios from '~plugins/axios';
 
+  const hasPic = true;
   export default {
   // vue
+    data() {
+      return {
+        isShowDetail: false,
+        ratingType: 2
+      }
+    },
     components: {
       vHeader,
       vFooter,
@@ -368,6 +392,26 @@
           }
           return format;
         }
+      },
+      toggleRatingCon(type) {
+        this.ratingType = type // 改变 this.ratingType的值 ==> ratingShow
+      },
+      ratingShow(hasPic) {
+        if (this.ratingType === 2) {
+          return true
+        } else {
+          return hasPic
+        }
+      }
+    },
+    computed: {
+      ratingTotal() {
+        return this.goods.ratings
+      },
+      ratingHasPic() {
+        return this.goods.ratings.filter((item) => {
+          return item.hasPicList == hasPic
+        })
       }
     },
     filters: {

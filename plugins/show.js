@@ -71,3 +71,42 @@ $(window).ready(function(){
              .addClass('marginTop');
       }
 });
+
+// 新品首发轮播
+$(function() {
+  const moveWrap = $('.xpsf-hook'); // 需要translateX的容器
+  const itmeWidth = $('.xpsf-hook').children('.floor-swiper-item').width(); // 每个item的宽度
+  const liLength = $('.xpsf-hook').children('.floor-swiper-item').length // 内容的数量
+  const page = Math.ceil(liLength / 4) // 可以分的页数
+  const width = itmeWidth * 4 + 10*page; // 一行的宽度
+  const arrow = $('.xpsf-hook').parent('.floor-main').siblings('.floor-arrow-wrap').find('.floor-arrow'); // 左右按钮
+  let flag = 1; // 标记当前处于第几页
+
+  // 容器初始样式设置
+  moveWrap.css({
+    'width': (itmeWidth * liLength + (liLength-1)*10)+'px',
+    'position': 'relative'
+  });
+
+  arrow.click(function() {
+    const index = $(this).index();
+    if (index) { // 右按钮
+      flag++;
+      if (flag > page) {
+        flag = page;
+        return;
+      } else if (flag == page) {
+        $(this).addClass('is-active').siblings().removeClass('is-active');
+      }
+    } else { // 左按钮
+      flag--;
+      if (flag <= 0) {
+        flag = 1;
+        return;
+      } else if(flag == 1) {
+        $(this).addClass('is-active').siblings().removeClass('is-active');
+      }
+    }
+    moveWrap.animate({left: '-'+ (flag-1)*width +'px'}, 500)
+  });
+});

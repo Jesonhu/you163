@@ -69,7 +69,7 @@
           </div>
           <div class="floor-swiper-bd">
             <div class="floor-main">
-              <ul class="floor-swiper-list">
+              <ul class="floor-swiper-list clearfix xpsf-hook">
                 <li class="floor-swiper-item" v-for="item in xpsf.menuList">
                   <a :href="item.link" class="link">
                     <div class="pic-wrap">
