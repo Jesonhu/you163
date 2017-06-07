@@ -21,13 +21,13 @@
         <div class="pd-bd-top clearfix">
           <div class="pd-slide clearfix">
             <div class="pd-view">
-              <img :src="goods.viewPicUrl" class="pd-view-img" alt="" $ref="pic-show">
+              <img :src="goods.viewPicUrl" class="pd-view-img pic-show-hook" alt="">
             </div>
             <ul class="pd-list">
-              <li class="pd-item"
+              <li class="pd-item pic-select-hook"
                   v-for="item in goods.sthumbs"
               >
-                <img :src="item.img" alt="" class="pd-item-img" $ref="pic-select">
+                <img :src="item.img" alt="" class="pd-item-img">
               </li>
             </ul>
           </div>
@@ -80,8 +80,11 @@
               <span class="title">颜色</span>
               <div class="pd-color-list clearfix">
                 <a href="javascript:;" class="pd-color-item"
-                   v-for="color in goods.choseColor"
+                   v-for="(color,index) in goods.choseColor"
                    :title="color.title"
+                   ref="chose-color-hook"
+                   :class="{'is-active': nowColor==index}"
+                   @click="selectColor(index)"
                 >
                   <img :src="color.img" alt="" class="pd-color-img">
                 </a>
@@ -91,7 +94,10 @@
               <span class="title">尺寸</span>
               <div class="pd-size-list clearfix">
                 <a href="javascript:;" class="pd-size-item"
-                   v-for="size in goods.size"
+                   v-for="(size,index) in goods.size"
+                   ref="chose-size-hook"
+                   :class="{'is-active': nowSize ==index}"
+                   @click="selectSize(index)"
                 >
                   {{size.name}}
                 </a>
@@ -99,16 +105,20 @@
             </div>
             <div class="field pd-count clearfix">
               <span class="title">数量</span>
-              <div class="cartcontroll clearfix">
-                <span class="btn"></span>
-                <input type="text" class="count" value="1">
-                <span class="btn"></span>
+              <div class="cartcontroll clearfix"
+                :class="{'is-active': canHandel}"
+              >
+                <span class="btn" @click="changeCount(0)"></span>
+                <input type="text" class="count"
+                       v-model="count"
+                >
+                <span class="btn" @click="changeCount(1)"></span>
               </div>
             </div>
 
             <div class="pd-controll clearfix">
               <span class="buy">立即购买</span>
-              <span class="addcart">加入购物车</span>
+              <span class="addcart" @click="addCart">加入购物车</span>
               <span class="store">收藏</span>
             </div>
 
@@ -358,10 +368,16 @@
   export default {
     // vue
     data() {
-      return {
-        isShowDetail: false,
-        ratingType: 2
-      }
+        return {
+          isShowDetail: false,
+          ratingType: 2,
+
+          count: 1,
+          isSelectColor: false,
+          nowColor: 99, // 标记最后一次点击的索引值
+          isSelectSize: false,
+          nowSize: 99,
+        }
     },
     components: {
       vHeader,
@@ -404,10 +420,52 @@
         } else {
           return hasPic
         }
-      }
+      },
 
-      // 商品详情图片相关
-      
+      // 是否可以改变商品数量
+      selectColor(index) {
+        if (!(this.nowColor == index)) { // 两次点击的不是同一个
+          this.nowColor = index
+          this.isSelectColor = true
+        } else { // 两次点击的是同一个
+          this.nowColor = 99
+          this.isSelectColor = false
+        }
+      },
+      selectSize(index) {
+        if (!(this.nowSize == index)) { // 两次点击的不是同一个
+          this.nowSize = index
+          this.isSelectSize = true
+        } else { // 两次点击的是同一个
+          this.nowSize = 99
+          this.isSelectSize = false
+        }
+      },
+
+      // 改变选中类型商品的数量
+      changeCount(action) {
+        if(this.isSelectColor && this.isSelectSize) {
+          if (action) { // 点击+
+            this.count++
+          } else { // 点击-
+            this.count--
+          }
+        }
+      },
+
+      // 加入购物车
+      addCart() {
+        if (this.isSelectColor && this.isSelectSize) {
+          let nowGood = Object.assign({}, this.goods)
+          nowGood.count = this.count
+          this.$store.commit('cart/ADD_CART', {
+            nowGood: nowGood,
+            count: this.count
+          })
+        } else {
+          alert('请选择商品颜色和尺寸')
+        }
+      }
     },
     computed: {
       ratingTotal() {
@@ -417,6 +475,15 @@
         return this.goods.ratings.filter((item) => {
           return item.hasPicList == hasPic
         })
+      },
+      // 标记是否可以改变商品数量
+      // => this.isSelectColor && this.isSelectSize
+      // => methods: selectColor selectSize
+      canHandel() {
+        if (this.isSelectColor && this.isSelectSize) {
+          return true
+        }
+        return false
       }
     },
     filters: {

@@ -110,3 +110,17 @@ $(function() {
     moveWrap.animate({left: '-'+ (flag-1)*width +'px'}, 500)
   });
 });
+
+// 购物车页效果
+$(function() {
+  const picShow = $('.pic-show-hook')
+  const picSelect = $('.pic-select-hook')
+  let nowPicSrc = ''
+
+  picSelect.hover(function() {
+    $(this).addClass('is-active').siblings().removeClass('is-active') // 当前节点添加样式兄弟节点移除样式
+    // 替换图片路径
+    nowPicSrc = $(this).find('img').attr('src')
+    picShow.attr('src', nowPicSrc)
+  })
+})
