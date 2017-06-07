@@ -47,7 +47,9 @@
               <div class="pl-category-group">
                 <a :href="item.link" class="pl-link"
                    :data-reactid="item.dataReactId"
-                   v-for="item in sort"
+                   v-for="(item,index) in sort"
+                   :class="{'is-active': classType == index}"
+                   @click="classList(index)"
                 >
                   {{item.name}}
                 </a>
@@ -58,7 +60,9 @@
               <div class="pl-filter-group">
                 <a :href="item.link" class="pl-link"
                    data-reactid="item.dataReactId"
-                   v-for="item in filter"
+                   v-for="(item,index) in filter"
+                   :class="{'is-active': filterType == index}"
+                   @click="filterList(index)"
                 >
                   {{item.name}}
                 </a>
@@ -92,10 +96,10 @@
                     </div>
                     <div class="pl-con-bd">
                       <div class="pl-bd-flagwrap">
-                                        <span class="pl-bd-flag"
-                                              v-if="good.flag"
-                                              v-for="flag in good.flag"
-                                        >{{flag.name}}</span>
+                        <span class="pl-bd-flag"
+                              v-if="good.flag"
+                              v-for="flag in good.flag"
+                        >{{flag.name}}</span>
                       </div>
                       <a :href="good.link" class="pl bd-namelink">
                         <h3 class="pl-name">{{good.name}}</h3>
@@ -128,6 +132,20 @@
   import axios from '~plugins/axios'
 
   export default {
+    data() {
+      return {
+        filterType: 0,
+        classFilter: 0
+      }
+    },
+    methods: {
+      filterList(index) {
+        this.filterType = index
+      },
+      classList(index) {
+        this.classFilter = index
+      }
+    },
     // vuex
     components: {
       vHeader,

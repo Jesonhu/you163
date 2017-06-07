@@ -20,14 +20,14 @@
         <!-- 商品详情顶部内容 -->
         <div class="pd-bd-top clearfix">
           <div class="pd-slide clearfix">
-            <dvi class="pd-view">
-              <img :src="goods.viewPicUrl" class="pd-view-img" alt="">
-            </dvi>
+            <div class="pd-view">
+              <img :src="goods.viewPicUrl" class="pd-view-img" alt="" $ref="pic-show">
+            </div>
             <ul class="pd-list">
               <li class="pd-item"
                   v-for="item in goods.sthumbs"
               >
-                <img :src="item.img" alt="" class="pd-item-img">
+                <img :src="item.img" alt="" class="pd-item-img" $ref="pic-select">
               </li>
             </ul>
           </div>
@@ -35,7 +35,7 @@
           <div class="pd-info">
             <div class="pd-intro clearfix">
               <div class="pd-namewrap">
-                <div class="pd-name">{{goods.name}}</div>
+                <div class="pd-name">{{goods.name}}-{{id}}</div>
                 <a class="pd-tag"
                    :href="tag.href"
                    v-if="goods.tagList"
@@ -356,7 +356,7 @@
 
   const hasPic = true;
   export default {
-  // vue
+    // vue
     data() {
       return {
         isShowDetail: false,
@@ -393,6 +393,8 @@
           return format;
         }
       },
+
+      // 评论相关
       toggleRatingCon(type) {
         this.ratingType = type // 改变 this.ratingType的值 ==> ratingShow
       },
@@ -403,6 +405,9 @@
           return hasPic
         }
       }
+
+      // 商品详情图片相关
+      
     },
     computed: {
       ratingTotal() {
@@ -429,7 +434,7 @@
         return newDate.toLocaleDateString();
       }
     },
-  // nuxt
+    // nuxt
     head() {
       return {
         title: '详情页',
@@ -455,6 +460,7 @@
         sameList: data.detailData.data.result.sameList,
         hotSale: data.detailData.data.result.hotSale,
         topicsRecommended: data.detailData.data.result.topicsRecommended,
+        id: params.id
       }
     }
   }

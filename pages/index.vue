@@ -64,14 +64,14 @@
             <div class="floor-title-name">{{xpsf.hdTitle}}</div>
             <div class="floor-title-desc">{{xpsf.titleDesc}}</div>
             <div class="floor-title-more">
-              <a href="" class="more-link">更多新品></a>
+              <router-link :to="/item/" class="more-link">更多新品></router-link>
             </div>
           </div>
           <div class="floor-swiper-bd">
             <div class="floor-main">
               <ul class="floor-swiper-list clearfix xpsf-hook">
                 <li class="floor-swiper-item" v-for="item in xpsf.menuList">
-                  <a :href="item.link" class="link">
+                  <router-link :to="'/item/'+item.link" class="link">
                     <div class="pic-wrap">
                       <span v-if="item.color" class="color">{{item.color}}</span>
                       <img :src="img.picUrl"
@@ -86,7 +86,7 @@
                       {{item.price | rmb}}
                       <span class="desc">{{item.desc}}</span>
                     </p>
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </div>

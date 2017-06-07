@@ -60,7 +60,7 @@ Crocs制造商新款拖鞋券后9块9">
               <div class="shop-cart-wrap">
                 <a href="" class="link">
                   <em class="bg-shop-cart shop-cart"></em>
-                  <em class="bg-badge badge">0</em>
+                  <em class="bg-badge badge">{{$store.state.cart.count}}</em>
                 </a>
               </div>
             </div>
