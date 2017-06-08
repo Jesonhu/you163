@@ -21,13 +21,21 @@ module.exports = {
    * 全局css配置
    */
   css: [
-    // '~assets/css/reset.css' // 全局添加内部样式
-    'swiper/dist/css/swiper.css'
+    '~assets/css/test.css', // 全局添加内部样式
+    'swiper/dist/css/swiper.css',
+    { src: '~assets/scss/test.scss', lang: 'scss' }
   ],
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#B4A078' }, // 刷新条颜色
+  loading: {
+    // 默认进度条
+    // color: '#B4A078',  // 进度条颜色 默认black
+    failedColor: 'red', // 页面数据加载失败时执行 默认red
+    height: '2px', // 进度条高度 默认2px
+
+    loading: '~components/loading.vue' // 使用自定义加载组件
+  },
   /*
   ** Build configuration
   */

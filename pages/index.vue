@@ -64,7 +64,7 @@
             <div class="floor-title-name">{{xpsf.hdTitle}}</div>
             <div class="floor-title-desc">{{xpsf.titleDesc}}</div>
             <div class="floor-title-more">
-              <router-link :to="/item/" class="more-link">更多新品></router-link>
+              <router-link to="/" class="more-link">更多新品></router-link>
             </div>
           </div>
           <div class="floor-swiper-bd">
@@ -332,6 +332,7 @@
         zxj: data.indexData.data.result.zxj,
         djdzs: data.indexData.data.result.djdzs
       }
+
     }
   }
 </script>
