@@ -84,7 +84,7 @@
                    :title="color.title"
                    ref="chose-color-hook"
                    :class="{'is-active': nowColor==index}"
-                   @click="selectColor(index)"
+                   @click="selectColor(index, color.img)"
                 >
                   <img :src="color.img" alt="" class="pd-color-img">
                 </a>
@@ -293,7 +293,7 @@
                                                   v-for="type in commit.skuInfo"
                                             >{{type}}</span>
                       </div>
-                      <div class="pubitem">{{commit.createTime | time}}</div>
+                      <div class="pubitem">{{commit.createTime | time1}}</div>
                     </div>
                   </div>
                 </li>
@@ -374,9 +374,12 @@
 
           count: 1,
           isSelectColor: false,
+          nowSelectColor: '',
+          nowColorId: 0,
           nowColor: 99, // 标记最后一次点击的索引值
           isSelectSize: false,
           nowSize: 99,
+          nowSizeId: 0,
         }
     },
     components: {
@@ -423,16 +426,19 @@
       },
 
       // 是否可以改变商品数量
-      selectColor(index) {
+      selectColor(index, color) {
+        this.nowColorId = index
         if (!(this.nowColor == index)) { // 两次点击的不是同一个
           this.nowColor = index
           this.isSelectColor = true
+          this.nowSelectColor = color
         } else { // 两次点击的是同一个
           this.nowColor = 99
           this.isSelectColor = false
         }
       },
       selectSize(index) {
+        this.nowSizeId = index
         if (!(this.nowSize == index)) { // 两次点击的不是同一个
           this.nowSize = index
           this.isSelectSize = true
@@ -457,7 +463,10 @@
       addCart() {
         if (this.isSelectColor && this.isSelectSize) {
           let nowGood = Object.assign({}, this.goods)
+          nowGood.nowSizeId = this.nowSizeId
+          nowGood.nowColorId = this.nowColorId
           nowGood.count = this.count
+          nowGood.nowSelectColor = this.nowSelectColor
           this.$store.commit('cart/ADD_CART', {
             nowGood: nowGood,
             count: this.count
@@ -484,21 +493,6 @@
           return true
         }
         return false
-      }
-    },
-    filters: {
-      wan(val) {
-        const nVal = Number(val);
-        if (nVal >=1000) {
-          return `999+`;
-        } else {
-          return val;
-        }
-      },
-      time(val){
-        let newDate = new Date();
-        newDate.setTime(val);
-        return newDate.toLocaleDateString();
       }
     },
     // nuxt

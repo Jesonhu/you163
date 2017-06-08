@@ -57,11 +57,40 @@ Crocs制造商新款拖鞋券后9块9">
                 <em class="bar"></em>
               </div>
 
-              <div class="shop-cart-wrap">
+              <div class="shop-cart-wrap z50">
                 <a href="" class="link">
                   <em class="bg-shop-cart shop-cart"></em>
                   <em class="bg-badge badge">{{$store.state.cart.count}}</em>
                 </a>
+                <div class="sub-wrap" v-show="$store.state.cart.list.length">
+                  <ul class="cart-list">
+                    <li class="cart-item clearfix"
+                      v-for="item in $store.state.cart.list"
+                    >
+                      <a href="" class="left-link">
+                        <img :src="item.nowSelectColor" alt="">
+                      </a>
+                      <div class="itme-right">
+                        <div class="hd clearfix">
+                          <a class="name" href="">{{item.name}}</a>
+                          <div class="price">{{item.retailPrice | rmb(2)}}</div>
+                        </div>
+                        <div class="con clearfix">
+                          <div class="desc line-overflow">粉色+白180*200cm</div>
+                          <div class="count">x{{item.count}}</div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="cart-bottom clearfix z50">
+                    <div class="total-price">
+                      商品合计:
+                      <span class="price">{{69 | rmb(2)}}</span>
+                    </div>
+                    <div class="buy">去购物车结算</div>
+                  </div>
+                </div>
+                <div class="arrow"></div>
               </div>
             </div>
           </div>

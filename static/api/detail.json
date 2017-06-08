@@ -3,6 +3,7 @@
   "result": {
     "goodsDetail": {
       "id": 1,
+      "gid": 1,
       "list": 1,
       "itemList": 3,
       "viewPicUrl": "/img/detail/view01.jpg",
