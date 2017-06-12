@@ -18,7 +18,8 @@ export const mutations = {
       state.list.forEach((item, index) => {
           if (item.id === action.nowGood.id) { // 是同一个商品
             if(item.nowSizeId === action.nowGood.nowSizeId && item.nowColorId === action.nowGood.nowColorId) { // 同一个商品相同类型
-              console.log('同一个商品且类型相同');
+              // console.log('同一个商品且类型相同');
+              item.count++
             } else { // 同一个商品不同类型
               isSame = true
             }

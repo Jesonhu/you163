@@ -9,6 +9,11 @@
     "nuxt": "latest",
     "vue-awesome-swiper": "^2.4.2"
   },
+  "config": {
+    "nuxt": {
+      "port": "3333"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
