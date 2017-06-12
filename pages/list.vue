@@ -48,7 +48,7 @@
                 <a :href="item.link" class="pl-link"
                    :data-reactid="item.dataReactId"
                    v-for="(item,index) in sort"
-                   :class="{'is-active': classType == index}"
+                   :class="{'is-active': classFilter == index}"
                    @click="classList(index)"
                 >
                   {{item.name}}

@@ -1,3 +1,5 @@
+const apiConfig = require('./plugins/apiConfig.js')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -63,7 +65,7 @@ module.exports = {
     base: '/'
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'http://127.0.0.1:3333'
+    baseUrl: apiConfig.baseUrl
   },
   plugins: [
     { src: '~plugins/filters.js', ssr: false },

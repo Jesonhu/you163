@@ -33,7 +33,8 @@
             <div class="c-cart-content">
               <ul class="c-cart-list">
                 <li class="c-cart-item clearfix"
-                    v-for="good in cart.cartGroupList[0].cartItemList"
+                    v-if="storeCart.length > 0"
+                    v-for="good in storeCart"
                 >
                   <div class="item checkoutwrap">
                     <input type="checkbox" class="cart-checkbox">
@@ -41,13 +42,13 @@
                   <div class="item detail">
                     <div class="pic">
                       <a href="" class="link">
-                        <img class="img" :src="good.pic" alt="">
+                        <img class="img" :src="good.nowSelectColor" alt="">
                       </a>
                     </div>
                     <div class="namecon">
-                      <a href="" class="name link">{{good.itemName}}</a>
+                      <a href="" class="name link">{{good.name}}</a>
                       <div class="spec">
-                        <a href="" class="size">{{good.specList[0].specValue}}</a>
+                        <a href="" class="size">13</a>
                         <i class="bg-arrow bg-arrow-arrow-down"></i>
                       </div>
                     </div>
@@ -57,11 +58,11 @@
                   <div class="item count">
                     <div class="item c-count">
                       <span class="btn"></span>
-                      <input type="text" class="count" :value="cart.cnt">
+                      <input type="text" class="count" :value="good.count">
                       <span class="btn"></span>
                     </div>
                   </div>
-                  <div class="item total">{{good.totalPrice | rmb}}</div>
+                  <div class="item total">{{good.retailPrice | rmb}}</div>
                   <div class="item active"></div>
                   <div class="bg-normal close"></div>
                   <hr class="line left">
@@ -92,7 +93,7 @@
             </div>
           </div>
 
-          <div class="cart-empty" style="display: none">
+          <div class="cart-empty" style="display: none" v-show="storeCart.length < 0">
             <div class="main">
               <i class="bg-shop-cart c-cart"></i>
               <p class="text">购物车还是空滴</p>
@@ -171,11 +172,15 @@
         ]
       }
     },
-    async asyncData({ params, error, store }) {
+    async asyncData({ params, error, store, isDev }) {
       let data = {};
+      let apiURI = 'http://github.easysolves.com/'
+      if (isDev) { // 开发环境
+        apiURI = 'http://127.0.0.1:3333/'
+      }
       try {
 //        data.commonData = await axios.get('/api/common.json');
-        data.cartData = await axios.get('/api/cart.json');
+        data.cartData = await axios.get(apiURI + 'api/cart.json');
       } catch (err) {
         console.log(err);
       }
@@ -185,6 +190,8 @@
         footerList: store.state.header_footer.footerList,
         mayLike: data.cartData.data.result.sameList,
         cart: data.cartData.data.result.cart,
+
+        storeCart: store.state.cart.list
       }
     }
   }

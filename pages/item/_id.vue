@@ -505,11 +505,15 @@
         ]
       }
     },
-    async asyncData({ params, error, store }) {
+    async asyncData({ params, error, store, isDev }) {
       let data = {};
+      let apiURI = 'http://github.easysolves.com/'
+      if (isDev) { // 开发环境
+        apiURI = 'http://127.0.0.1:3333/'
+      }
       try {
 //        data.commonData = await axios.get('http://127.0.0.1:3000/api/common.json');
-        data.detailData = await axios.get('http://127.0.0.1:3000/api/detail.json');
+        data.detailData = await axios.get(apiURI + 'api/detail.json');
       } catch (err) {
         console.log(err);
       }

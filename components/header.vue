@@ -87,7 +87,7 @@ Crocs制造商新款拖鞋券后9块9">
                       商品合计:
                       <span class="price">{{69 | rmb(2)}}</span>
                     </div>
-                    <div class="buy">去购物车结算</div>
+                    <router-link class="buy" to="/cart">去购物车结算</router-link>
                   </div>
                 </div>
                 <div class="arrow"></div>
