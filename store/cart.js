@@ -31,9 +31,15 @@ export const mutations = {
       })
       if (isSame) {
         state.list.push(action.nowGood)
+        // 保存到localStorage
+        localStorage.setItem('cartList', JSON.stringify(action.nowGood))
+        console.log(JSON.parse(localStorage.getItem('cartList')))
       }
     } else { // 购物车里没有商品
       state.list.push(action.nowGood)
+       // 保存到localStorage
+      localStorage.setItem('cartList', JSON.stringify(action.nowGood))
+      console.log(JSON.parse(localStorage.getItem('cartList')))
     }
   },
   UPDATE_CART(state, action) {
