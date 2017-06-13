@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from '~plugins/axios'
+import { getLocalStore } from '~plugins/store'
 
 // Vue.use(Vuex)
 //
@@ -21,7 +22,7 @@ import axios from '~plugins/axios'
 
 export const actions = {
   // nuxt初始化后执行的第一个方法:可以用来配置全局服务初始化
-  nuxtServerInit(store, {params}) {
+  nuxtServerInit(store, {isDev, params}) {
     const initAppData = [
       store.dispatch('loadCommonData') // <--
     ]
@@ -29,6 +30,7 @@ export const actions = {
   },
 
   loadCommonData({ commit }) {
+    // commit('cart/INIT_DATA')
     return axios.get('/api/common.json')
       .then((res) => {
         commit('header_footer/GET_DATA_sHotKey', { // <--

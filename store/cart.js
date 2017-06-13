@@ -1,3 +1,5 @@
+import { setLocalStore, getLocalStore } from '~plugins/store'
+
 export const state = () => {
   return {
     list: [],
@@ -10,6 +12,15 @@ export const state = () => {
 // }
 
 export const mutations = {
+  INIT_DATA(state) {
+    const cartList = getLocalStore('cartList')
+    const count = getLocalStore('count')
+    if (count>0) {
+      state.list = cartList
+      state.count = count
+      console.log('初始购物车')
+    }
+  },
   ADD_CART(state, action) {
     // 添加商品到购物车里面
     let isSame = false
@@ -23,24 +34,19 @@ export const mutations = {
             } else { // 同一个商品不同类型
               isSame = true
             }
-            console.log(0)
           } else { // 不是同一个商品
             isSame = true
-            console.log(1)
           }
       })
       if (isSame) {
         state.list.push(action.nowGood)
-        // 保存到localStorage
-        localStorage.setItem('cartList', JSON.stringify(action.nowGood))
-        console.log(JSON.parse(localStorage.getItem('cartList')))
       }
     } else { // 购物车里没有商品
       state.list.push(action.nowGood)
-       // 保存到localStorage
-      localStorage.setItem('cartList', JSON.stringify(action.nowGood))
-      console.log(JSON.parse(localStorage.getItem('cartList')))
     }
+    // 添加到本地存储
+    setLocalStore('count', state.count)
+    setLocalStore('cartList', state.list)
   },
   UPDATE_CART(state, action) {
     // 更新购物车商品的数量
