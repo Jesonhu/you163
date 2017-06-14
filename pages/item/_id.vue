@@ -108,7 +108,7 @@
               <div class="cartcontroll clearfix"
                 :class="{'is-active': canHandel}"
               >
-                <span class="btn" @click="changeCount(0)"></span>
+                <span class="btn" @click="changeCount(0)" :class="{'no-select':canSelect}"></span>
                 <input type="text" class="count"
                        v-model="count"
                 >
@@ -379,7 +379,8 @@
           nowColor: 99, // 标记最后一次点击的索引值
           isSelectSize: false,
           nowSize: 99,
-          nowSizeId: 0,
+          nowSizeId: 0
+
         }
     },
     components: {
@@ -454,6 +455,9 @@
           if (action) { // 点击+
             this.count++
           } else { // 点击-
+            if (this.count <= 1) {
+                return
+            }
             this.count--
           }
         }
@@ -493,6 +497,13 @@
           return true
         }
         return false
+      },
+      canSelect() {
+          if(this.count<=1) {
+              return true
+          } else {
+              return false
+          }
       }
     },
     // nuxt

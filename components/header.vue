@@ -86,7 +86,7 @@ Crocs制造商新款拖鞋券后9块9">
                   <div class="cart-bottom clearfix z50">
                     <div class="total-price">
                       商品合计:
-                      <span class="price">{{69 | rmb(2)}}</span>
+                      <span class="price">{{totalPrice | rmb(2)}}</span>
                     </div>
                     <router-link class="buy" to="/cart">去购物车结算</router-link>
                   </div>
@@ -143,10 +143,29 @@ Crocs制造商新款拖鞋券后9块9">
   export default {
     name: 'header',
     props: ['searchHotKeyList', 'tabNav'],
+    data() {
+      return {
+        totalPrice: 0
+      }
+    },
+    created() {
+       this.calcTotalPrice() // <==
+    },
     methods: {
       removeCart(item, index) {
-          this.$store.commit('cart/REMOVE_CART', index)
+        this.$store.commit('cart/REMOVE_CART', index)
+      },
+      calcTotalPrice() {
+        const This = this
+        setTimeout(function() {
+          This.$store.state.cart.list.forEach((item) => {
+            This.totalPrice += item.retailPrice * item.count
+          })
+        }, 300)
       }
+    },
+    computed: {
+
     }
   }
 </script>

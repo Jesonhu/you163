@@ -24,7 +24,7 @@ export const mutations = {
   ADD_CART(state, action) {
     // 添加商品到购物车里面
     let isSame = false
-    state.count++
+    state.count += action.count
     if (state.list.length > 0) { // 购物车里有商品
       state.list.forEach((item, index) => {
           if (item.id === action.nowGood.id) { // 是同一个商品
@@ -49,11 +49,21 @@ export const mutations = {
     setLocalStore('cartList', state.list)
   },
   UPDATE_CART(state, action) {
-    // 更新购物车商品的数量
+    if (action === 1) {
+      state.count++
+    } else if(action === 0) {
+      state.count--
+    }
   },
   REMOVE_CART(state, action) {
-    state.count--
     state.list.splice(action,1)
+    if (state.list.length > 0) {
+      state.list.forEach((item) => {
+        state.count = item.count
+      })
+    } else {
+      state.count = 0
+    }
     // 添加到本地存储
     setLocalStore('count', state.count)
     setLocalStore('cartList', state.list)

@@ -1305,6 +1305,7 @@ a{
     width:200px;
     text-align: center;
 }
+.c-cart-body .c-cart-main input.cart-checkbox.is-active,
 .c-cart-body .c-cart-main input.cart-checkbox[checked=checked]{
     background-position: 0 -56px;
 }
@@ -1367,6 +1368,7 @@ a{
     justify-content: center;
     align-items: center;
 }
+
 .c-cart-body input[type="checkbox"]{
     display: inline-block;
     float: left;

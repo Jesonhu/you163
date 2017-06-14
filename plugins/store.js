@@ -4,7 +4,6 @@
  */
 export function setLocalStore(key, val) {
     const store = window.localStorage.getItem(key)
-    console.log(val)
     if ( typeof val == 'object' ) { // 传过来的数据为对象格式保存为数组格式
         let initDataArr = []
         initDataArr.push(val)

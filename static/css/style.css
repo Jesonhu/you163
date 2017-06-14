@@ -947,6 +947,9 @@
     background-color:#fff;
     cursor: pointer;
 }
+.pd-bd-top .pd-count .btn.no-select{
+  cursor:not-allowed;
+}
 .pd-bd-top .pd-count .btn:first-child:before,
 .pd-bd-top .pd-count .btn:last-child:before,
 .pd-bd-top .pd-count .btn:last-child:after{
