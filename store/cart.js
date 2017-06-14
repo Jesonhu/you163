@@ -12,13 +12,13 @@ export const state = () => {
 // }
 
 export const mutations = {
-  INIT_DATA(state) {
-    const cartList = getLocalStore('cartList')
-    const count = getLocalStore('count')
-    if (count>0) {
-      state.list = cartList
-      state.count = count
-      console.log('初始购物车')
+  INIT_DATA(state,action) {
+    if (action.tag === 1) {
+      // console.log(action.count)
+      state.count = action.count
+    }else if (action.tag === 2) {
+      // console.log(action.cartList)
+      state.list = action.cartList
     }
   },
   ADD_CART(state, action) {
@@ -50,5 +50,12 @@ export const mutations = {
   },
   UPDATE_CART(state, action) {
     // 更新购物车商品的数量
+  },
+  REMOVE_CART(state, action) {
+    state.count--
+    state.list.splice(action,1)
+    // 添加到本地存储
+    setLocalStore('count', state.count)
+    setLocalStore('cartList', state.list)
   }
 }

@@ -70,6 +70,7 @@ module.exports = {
   plugins: [
     { src: '~plugins/filters.js', ssr: false },
     { src: '~plugins/jquery.min.js', ssr: false },
+    { src:'~plugins/refresh.js', ssr: false },
     { src: '~plugins/swiper.js', ssr: false },
     { src: '~plugins/show.js', ssr: false },
     { src: '~plugins/jquery.fixedtool.js', ssr: false }

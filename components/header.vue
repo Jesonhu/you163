@@ -65,7 +65,7 @@ Crocs制造商新款拖鞋券后9块9">
                 <div class="sub-wrap" v-show="$store.state.cart.list.length">
                   <ul class="cart-list">
                     <li class="cart-item clearfix"
-                      v-for="item in $store.state.cart.list"
+                      v-for="(item,index) in $store.state.cart.list"
                     >
                       <a href="" class="left-link">
                         <img :src="item.nowSelectColor" alt="">
@@ -80,6 +80,7 @@ Crocs制造商新款拖鞋券后9块9">
                           <div class="count">x{{item.count}}</div>
                         </div>
                       </div>
+                      <div class="remove" @click="removeCart(item,index)"></div>
                     </li>
                   </ul>
                   <div class="cart-bottom clearfix z50">
@@ -90,7 +91,7 @@ Crocs制造商新款拖鞋券后9块9">
                     <router-link class="buy" to="/cart">去购物车结算</router-link>
                   </div>
                 </div>
-                <div class="arrow"></div>
+                <div class="arrow" :class="{'is-active':$store.state.cart.count>0}"></div>
               </div>
             </div>
           </div>
@@ -125,7 +126,7 @@ Crocs制造商新款拖鞋券后9块9">
                 <div class="shop-cart-wrap">
                   <router-link to="" class="link">
                     <em class="bg-shop-cart shop-cart"></em>
-                    <em class="bg-badge badge">0</em>
+                    <em class="bg-badge badge">{{$store.state.cart.count}}</em>
                   </router-link>
                 </div>
               </li>
@@ -141,6 +142,11 @@ Crocs制造商新款拖鞋券后9块9">
 <script>
   export default {
     name: 'header',
-    props: ['searchHotKeyList', 'tabNav']
+    props: ['searchHotKeyList', 'tabNav'],
+    methods: {
+      removeCart(item, index) {
+          this.$store.commit('cart/REMOVE_CART', index)
+      }
+    }
   }
 </script>

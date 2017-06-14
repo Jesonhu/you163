@@ -62,6 +62,15 @@ $(function() {
       hdTabMain.css('paddingTop', 0);
     }
   })
+
+  // 购物车
+  $('.shop-cart-wrap').hover(
+    function() {
+      $(this).find('.sub-wrap').show().siblings('.arrow').show()
+    }, function() {
+      $(this).find('.sub-wrap').hide().siblings('.arrow').hide()
+    }
+  )
 });
 
 $(window).ready(function(){
@@ -122,5 +131,38 @@ $(function() {
     // 替换图片路径
     nowPicSrc = $(this).find('img').attr('src')
     picShow.attr('src', nowPicSrc)
+  })
+})
+
+// 人气推荐
+$(function() {
+  const $navTab = $('.floor-title-tabnav').children('.tabnav')
+  const $conTab = $('.floor-tabcon-bd').children('.recomment-list-hook')
+
+  $navTab.eq(0).addClass('is-active')
+  $conTab.eq(0).show().siblings().hide()
+
+  $navTab.mouseenter(function() {
+    const index = $(this).index()
+    $(this).addClass('is-active').siblings().removeClass('is-active')
+    $conTab.eq(index).show().siblings().hide()
+  })
+})
+
+// 返回顶部
+$(function() {
+  let winWidth = $(window).width()
+  let scrollTop
+  $('.fixedtool').css({'display': 'none', 'left': (winWidth-60)+'px'})
+  $(window).scroll(function() {
+    scrollTop = $(window).scrollTop()
+    if (scrollTop > 50) {
+      $('.fixedtool').css('display', 'block')
+    } else {
+      $('.fixedtool').css('display', 'none')
+    }
+  })
+  $('.fixedtool').click(function() {
+    $('body, html').animate({scrollTop:0}, 450)
   })
 })

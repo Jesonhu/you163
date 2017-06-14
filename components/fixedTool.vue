@@ -12,10 +12,10 @@
       <em class="fixedtool-onlinechat"></em>
       <p class="text">在线客服</p>
     </a>
-    <a href="" class="link">
+    <div class="link">
       <em class="bg-arrow arrow-up"></em>
       <p class="text">回顶部</p>
-    </a>
+    </div>
   </div>
 </template>
 
