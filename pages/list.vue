@@ -19,7 +19,8 @@
           <div class="fade-pic">
             <ul class="fade-list">
               <li class="fade-item"
-                  v-for="item in bannerList"
+                  v-for="(item,index) in bannerList"
+                  v-show="Index == index"
               >
                 <a :href="item.link" class="fade-link">
                   <img :src="item.picUrl" alt="" class="fade-img">
@@ -34,7 +35,8 @@
           <div class="fade-nav">
             <ul class="fade-nav-list z10">
               <li class="fade-nav-item"
-                  v-for="item in bannerList.length"
+                  v-for="(item,index) in bannerList.length"
+                  :class="{'is-active':Index==index}"
               ></li>
             </ul>
           </div>
@@ -134,6 +136,9 @@
   export default {
     data() {
       return {
+        // banner
+        Index: 0,
+
         filterType: 0,
         classFilter: 0
       }

@@ -31,42 +31,42 @@
         "text": "居家",
         "childNavList": [
           {
-            "Link": "",
+            "Link": "/list",
             "picUrl": "/img/item_list_jj.png",
             "text": "夏凉"
           },
           {
-            "Link": "",
+            "Link": "/list",
             "picUrl": "/img/item_list_jj.png",
             "text": "被枕"
           },
           {
-            "Link": "",
+            "Link": "/list",
             "picUrl": "/img/item_list_jj.png",
             "text": "床品件套"
           },
           {
-            "Link": "",
+            "Link": "/list",
             "picUrl": "/img/item_list_jj.png",
             "text": "布艺软装"
           },
           {
-            "Link": "",
+            "Link": "/list",
             "picUrl": "/img/item_list_jj.png",
             "text": "家具"
           },
           {
-            "Link": "",
+            "Link": "/list",
             "picUrl": "/img/item_list_jj.png",
             "text": "灯具"
           },
           {
-            "Link": "",
+            "Link": "/list",
             "picUrl": "/img/item_list_jj.png",
             "text": "家饰"
           },
           {
-            "Link": "",
+            "Link": "/list",
             "picUrl": "/img/item_list_jj.png",
             "text": "宠物"
           }
