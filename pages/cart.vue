@@ -87,7 +87,9 @@
                 <div class="count">已选({{totalAllNum}})</div>
               </div>
               <div class="empty">批量删除</div>
-              <div class="pay" :class="{'is-active': checkItemNum>0}">下单</div>
+              <div class="pay" :class="{'is-active': checkItemNum>0}"
+                @click="pay(totalAllPrice)"
+                >下单</div>
               <div class="info">
                 <div class="line">
                   <div class="tip">
@@ -165,6 +167,7 @@
   import vFooter from '~components/footer'
   import fixedTool from '~components/fixedTool'
   import axios from '~plugins/axios'
+  import goodsOrder from '~plugins/goods_order'
 
   export default {
     // vue
@@ -272,6 +275,9 @@
       removeCart(item, index) {
         this.$store.commit('cart/REMOVE_CART', index)
       },
+      pay(price) {
+        alert( goodsOrder(price) )
+      }
     },
     computed: {
       isSelectAll() {

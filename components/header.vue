@@ -76,7 +76,7 @@ Crocs制造商新款拖鞋券后9块9">
                           <div class="price">{{item.retailPrice | rmb(2)}}</div>
                         </div>
                         <div class="con clearfix">
-                          <div class="desc line-overflow">粉色+白180*200cm</div>
+                          <div class="desc line-overflow">{{item.choseColor[item.nowColorId].title}}+{{item.size[item.nowSizeId].name}}</div>
                           <div class="count">x{{item.count}}</div>
                         </div>
                       </div>
