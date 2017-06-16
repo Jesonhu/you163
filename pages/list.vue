@@ -20,8 +20,12 @@
             <transition-group tag="ul" class="fade-list" name="fade">
               <li class="fade-item"
                   v-for="(item,index) in bannerList"
+<<<<<<< HEAD
                   :key="item"
                   v-show="Index==index"
+=======
+                  v-show="Index == index"
+>>>>>>> 7dc4d7513f450a148735fe8153610a6b956b3310
               >
                 <a :href="item.link" class="fade-link">
                   <img :src="item.picUrl" alt="" class="fade-img">
@@ -44,7 +48,10 @@
               <li class="fade-nav-item"
                   v-for="(item,index) in bannerList.length"
                   :class="{'is-active':Index==index}"
+<<<<<<< HEAD
                   @click=selectBanner(index)
+=======
+>>>>>>> 7dc4d7513f450a148735fe8153610a6b956b3310
               ></li>
             </ul>
           </div>
@@ -145,6 +152,9 @@
   export default {
     data() {
       return {
+        // banner
+        Index: 0,
+
         filterType: 0,
         classFilter: 0,
 

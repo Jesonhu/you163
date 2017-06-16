@@ -1052,11 +1052,24 @@ a{
     background:rgba(180,160,120,.8);
     border:2px solid transparent;
 }
+.swiper .fade-nav-item{
+    display:inline-block;
+    width:12px;
+    height:12px;
+    margin-right:10px;
+    border-radius:50%;
+    cursor: pointer;
+    background:rgba(180,160,120,.8);
+    border:2px solid transparent;
+}
 .c-fadebanner .fade-nav .fade-nav-item.is-active{
     background:0 0;
     border-color:rgb(180,160,120);
 }
-
+.swiper .fade-nav-item.is-active{
+   background:0 0;
+   border-color:rgb(180,160,120); 
+}
 /* 产品详情页横向轮播 */
 .c-row-carousel{
     width:100%;
@@ -1128,7 +1141,7 @@ a{
 }
 .c-row-carousel .c-main > .c-arrowwrap .next{
     right:-45px;
-    background-position: 0 -4862px;G922
+    background-position: 0 -4862px;
 }
 
 /* 竖向列表 */

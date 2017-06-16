@@ -19,8 +19,8 @@
             </div>
           <!--</ul>-->
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev bg-badge arrow"></div>
+        <div class="swiper-button-next bg-badge arrow"></div>
         <div class="bottom-nav swiper-pagination">
           <!--<ul class="bottom-nav-list clearfix">-->
             <!--<li class="bottom-nav-item" v-for="item in bannerList.length">-->
@@ -228,7 +228,7 @@
                   </div>
                   <div class="desc">
                     {{item.desc}}
-                    <em class="more"></em>
+                    <em class="more"></em>  
                   </div>
                 </div>
               </li>
