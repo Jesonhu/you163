@@ -471,7 +471,8 @@
           nowGood.nowColorId = this.nowColorId
           nowGood.count = this.count
           nowGood.nowSelectColor = this.nowSelectColor
-          this.$store.commit('cart/ADD_CART', {
+
+          this.$store.commit('cart/ADD_CART', { // <==
             nowGood: nowGood,
             count: this.count
           })
