@@ -17,24 +17,34 @@
         <!-- banner -->
         <div class="c-fadebanner">
           <div class="fade-pic">
-            <ul class="fade-list">
+            <transition-group tag="ul" class="fade-list" name="fade">
               <li class="fade-item"
-                  v-for="item in bannerList"
+                  v-for="(item,index) in bannerList"
+                  :key="item"
+                  v-show="Index==index"
               >
                 <a :href="item.link" class="fade-link">
                   <img :src="item.picUrl" alt="" class="fade-img">
                 </a>
               </li>
-            </ul>
+            </transition-group>
           </div>
           <div class="fade-arrow">
-            <button class="bg-normal prev z10"></button>
-            <button class="bg-normal next z10"></button>
+            <button class="bg-normal prev z10"
+              @click="go(0)"
+            ></button>
+            <button 
+              class="bg-normal next z10"
+              @click="go(1)"
+            >
+            </button>
           </div>
           <div class="fade-nav">
             <ul class="fade-nav-list z10">
               <li class="fade-nav-item"
-                  v-for="item in bannerList.length"
+                  v-for="(item,index) in bannerList.length"
+                  :class="{'is-active':Index==index}"
+                  @click=selectBanner(index)
               ></li>
             </ul>
           </div>
@@ -126,16 +136,20 @@
 </template>
 
 <script>
-  import vHeader from '~components/header';
-  import vFooter from '~components/footer';
-  import fixedTool from '~components/fixedTool';
+  import vHeader from '~components/header'
+  import vFooter from '~components/footer'
+  import fixedTool from '~components/fixedTool'
   import axios from '~plugins/axios'
+  let timer
 
   export default {
     data() {
       return {
         filterType: 0,
-        classFilter: 0
+        classFilter: 0,
+
+        // banner
+        Index: 0
       }
     },
     methods: {
@@ -144,6 +158,26 @@
       },
       classList(index) {
         this.classFilter = index
+      },
+
+      // banner
+      selectBanner(index) {
+        this.Index = index
+      },
+      go(action) {
+        if (action) { // 点击右按钮
+          if (this.Index >= 1) {
+            this.Index = 0
+          } else {
+            this.Index++
+          }
+        } else {
+          if (this.Index <= 0) {
+            this.Index = 1
+          } else {
+            this.Index--
+          }
+        }
       }
     },
     // vuex
@@ -184,4 +218,13 @@
 </script>
 
 <style>
+  .fade-enter{
+    opacity:1;
+    display:block;
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    opacity:0;
+    transition:all .2s linear;
+  }
 </style>
